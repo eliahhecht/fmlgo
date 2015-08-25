@@ -1,58 +1,58 @@
 {
     "Dan":
     [
-            "Shivan Reef",
-            "Exquisite Firecraft",
-            "Abbot of Keral Keep",
-            "Smash to Smithereens",
-            "Goblin Piledriver",
-            "Starfield of Nyx",
-            "Goblin Piledriver",
-            "Starfield of Nyx",
-            "Plummet"
+        "Shivan Reef",
+        "Exquisite Firecraft",
+        "Abbot of Keral Keep",
+        "Smash to Smithereens",
+        "Goblin Piledriver",
+        "Starfield of Nyx",
+        "Goblin Piledriver",
+        "Starfield of Nyx",
+        "Plummet"
     ],
     "Patrick":
     [
-            "Chief of the Foundry",
-            "Whirler Rogue",
-            "Thopter Spy Network",
-            "Caustic Caterpillar",
-            "Harbinger of the Tides",
-            "Suppression Bonds",
-            "Sigiled Starfish",
-            "Dragon Fodder"
+        "Chief of the Foundry",
+        "Whirler Rogue",
+        "Thopter Spy Network",
+        "Caustic Caterpillar",
+        "Harbinger of the Tides",
+        "Suppression Bonds",
+        "Sigiled Starfish",
+        "Dragon Fodder"
     ],
     "Paul":
     [
-            "Llanowar Wastes",
-            "Nissa, Vastwood Seer",
-            "Languish",
-            "Negate",
-            "Fiery Impulse",
-            "Archangel of Tithes",
-            "Pia and Kiran Nalaar",
-            "Evolutionary Leap"
+        "Llanowar Wastes",
+        "Nissa, Vastwood Seer",
+        "Languish",
+        "Negate",
+        "Fiery Impulse",
+        "Archangel of Tithes",
+        "Pia and Kiran Nalaar",
+        "Evolutionary Leap"
     ],
     "Eliah":
     [
-            "Caves of Koilos",
-            "Hangarback Walker",
-            "Yavimaya Coast",
-            "Day's Undoing",
-            "Herald of the Pantheon",
-            "Tragic Arrogance",
-            "Molten Vortex",
-            "Disciple of the Ring"
+        "Caves of Koilos",
+        "Hangarback Walker",
+        "Yavimaya Coast",
+        "Day's Undoing",
+        "Herald of the Pantheon",
+        "Tragic Arrogance",
+        "Molten Vortex",
+        "Disciple of the Ring"
     ],
     "Marcio":
     [
-            "Battlefield Forge",
-            "Jace, Vryn's Prodigy",
-            "Liliana, Heretical Healer",
-            "Chandra, Fire of Kaladesh",
-            "Sphinx's Tutelage",
-            "Magmatic Insight",
-            "Kytheon, Hero of Akros",
-            "Evolving Wilds"
+        "Battlefield Forge",
+        "Jace, Vryn's Prodigy",
+        "Liliana, Heretical Healer",
+        "Chandra, Fire of Kaladesh",
+        "Sphinx's Tutelage",
+        "Magmatic Insight",
+        "Kytheon, Hero of Akros",
+        "Evolving Wilds"
     ]
 }
