@@ -1,2 +1,2 @@
-# fml
-Fantasy Magic Leagueasy Ma
+# FML
+Fantasy Magic League
