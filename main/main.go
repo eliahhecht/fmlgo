@@ -3,22 +3,7 @@ package main
 import (
     "encoding/json"
     "io/ioutil"
-    "fmt"
 )
-
-type Card struct {
-    Name string
-}
-
-type Set struct {
-    Code  string
-    Cards []Card
-}
-
-type Player struct {
-    Name string
-    Cards []Card
-}
 
 func main() {
     var sets map[string]Set
@@ -50,33 +35,6 @@ func buildCards(cardNames []string) []Card {
     return cards
 }
 
-func checkSanity(players []Player, legalSets []Set) {
-    for _, player := range players {
-        for _, card := range player.Cards {
-            if !anySetContainsCard(legalSets, card) {
-                panic(fmt.Sprintf("%s's card %s not found in any legal set", player.Name, card))
-            }
-        }
-    }
-}
-
-func anySetContainsCard(sets []Set, card Card) bool {
-    for _, set := range sets {
-        if set.containsCard(card) {
-            return true
-        }
-    }
-    return false
-}
-
-func (set Set) containsCard(targetCard Card) bool {
-    for _, card := range set.Cards {
-        if card == targetCard {
-            return true
-        }
-    }
-    return false
-}
 
 func readJsonFile(path string, contentsHolder interface{}) {
     var fileContents = readFile(path)
