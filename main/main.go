@@ -12,7 +12,7 @@ func main() {
 
     players := buildPlayers()
 
-    checkSanity(players, []Set{ori})
+    confirmCardsAreLegal(players, []Set{ori})
 }
 
 func buildPlayers() []Player {

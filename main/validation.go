@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func checkSanity(players []Player, legalSets []Set) {
+func confirmCardsAreLegal(players []Player, legalSets []Set) {
     for _, player := range players {
         for _, card := range player.Cards {
             if !anySetContainsCard(legalSets, card) {
