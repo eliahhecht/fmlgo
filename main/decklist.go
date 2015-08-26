@@ -13,6 +13,11 @@ type Decklist struct {
 
 var cardLineRegex = regexp.MustCompile(`(\d+) (.*)`)
 
+func loadDecklist(path string) Decklist {
+    fileContents = string(readFile(path))
+    return parseDecklist(fileContents)
+}
+
 func parseDecklist(decklist string) Decklist {
     lines := strings.Split(decklist, "\n")
     cards := []Card{}
