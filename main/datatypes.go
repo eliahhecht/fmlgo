@@ -1,9 +1,7 @@
 package main
 
 
-type Card struct {
-    Name string
-}
+type Card string
 
 type Set struct {
     Code  string

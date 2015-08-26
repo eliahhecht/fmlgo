@@ -1,10 +1,5 @@
 package main
 
-import (
-    "encoding/json"
-    "io/ioutil"
-)
-
 func main() {
     var sets map[string]Set
     readJsonFile("./AllSets.json", &sets)
@@ -30,22 +25,7 @@ func buildPlayers() []Player {
 func buildCards(cardNames []string) []Card {
     var cards = make([]Card, 0)
     for _, cardName := range cardNames {
-        cards = append(cards, Card{Name: cardName})
+        cards = append(cards, Card(cardName))
     }
     return cards
-}
-
-
-func readJsonFile(path string, contentsHolder interface{}) {
-    var fileContents = readFile(path)
-    json.Unmarshal(fileContents, contentsHolder)
-}
-
-func readFile(path string) []byte {
-    fileContents, err := ioutil.ReadFile(path)
-    if err == nil {
-        return fileContents
-    } else {
-        panic(err)
-    }
 }
