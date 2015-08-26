@@ -25,7 +25,7 @@ func parseDecklist(decklist string) Decklist {
 		trimmed := strings.TrimSpace(line)
 		matches := cardLineRegex.FindStringSubmatch(trimmed)
 
-		if len(matches) == 3 {
+		if len(matches) == 3 { // matched a number and a card name
 			numberOfCard, err := strconv.Atoi(matches[1])
 			if err != nil {
 				panic("Could not parse number of card")
