@@ -2,7 +2,6 @@ package main
 
 // ScoreResult represents the score for a given player for a given week
 type ScoreResult struct {
-	Total      float64
 	CardScores map[Card]float64
 }
 
@@ -12,7 +11,15 @@ func newScoreResult() ScoreResult {
 
 func (sr *ScoreResult) addCard(c Card) {
 	sr.CardScores[c] += 1.0
-	sr.Total += 1.0 //ehtodo make total a func
+}
+
+// Total is the player's total points for the week
+func (sr ScoreResult) Total() float64 {
+	total := 0.0
+	for _, cardScoreValue := range sr.CardScores {
+		total += cardScoreValue
+	}
+	return total
 }
 
 func (p *Player) hasCard(needle Card) bool {
