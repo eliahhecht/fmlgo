@@ -15,5 +15,5 @@ func TestScoringForSimpleCase(t *testing.T) {
 
 	score := calculateScore([]Player{player}, []Decklist{decklist})
 
-	assert.Equal(t, 2, score["TestPlayer"].Total)
+	assert.Equal(t, 2.0, score["Test Player"].Total)
 }
