@@ -9,8 +9,8 @@ func newScoreResult() ScoreResult {
 	return ScoreResult{CardScores: make(map[Card]float64)}
 }
 
-func (sr *ScoreResult) addCard(c Card) {
-	sr.CardScores[c] += 1.0
+func (sr *ScoreResult) addCard(c Card, scoreMultiplier float64) {
+	sr.CardScores[c] += 1.0 * scoreMultiplier
 }
 
 // Total is the player's total points for the week
@@ -46,7 +46,7 @@ func scorePlayer(player Player, decklists []Decklist) ScoreResult {
 	for _, decklist := range decklists {
 		for _, decklistCard := range decklist.Cards {
 			if player.hasCard(decklistCard) {
-				playerResult.addCard(decklistCard)
+				playerResult.addCard(decklistCard, decklist.ScoreMultiplier)
 			}
 		}
 	}

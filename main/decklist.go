@@ -8,7 +8,8 @@ import (
 
 // Decklist represents a decklist, containing a set of cards
 type Decklist struct {
-	Cards []Card
+	Cards           []Card
+	ScoreMultiplier float64
 }
 
 var cardLineRegex = regexp.MustCompile(`(\d+) (.*)`)
@@ -38,5 +39,5 @@ func parseDecklist(decklist string) Decklist {
 			}
 		}
 	}
-	return Decklist{cards}
+	return Decklist{Cards: cards}
 }
