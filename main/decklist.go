@@ -21,23 +21,38 @@ func loadDecklist(path string) Decklist {
 
 func parseDecklist(decklist string) Decklist {
 	lines := strings.Split(decklist, "\n")
-	cards := []Card{}
+	allCards := []Card{}
 	for _, line := range lines {
-		trimmed := strings.TrimSpace(line)
-		matches := cardLineRegex.FindStringSubmatch(trimmed)
-
-		if len(matches) == 3 { // matched a number and a card name
-			numberOfCard, err := strconv.Atoi(matches[1])
-			if err != nil {
-				panic("Could not parse number of card")
-			}
-
-			card := Card(matches[2])
-
-			for i := 0; i < numberOfCard; i++ {
-				cards = append(cards, card)
-			}
+		newCards, ok := parseLine(line)
+		if ok {
+			allCards = append(allCards, newCards...)
 		}
 	}
-	return Decklist{Cards: cards}
+	return Decklist{Cards: allCards}
+}
+
+func parseLine(line string) (cards []Card, ok bool) {
+	trimmed := strings.TrimSpace(line)
+	matches := cardLineRegex.FindStringSubmatch(trimmed)
+
+	if len(matches) == 3 { // matched a number and a card name
+		numberOfCard, err := strconv.Atoi(matches[1])
+		if err != nil {
+			panic("Could not parse number of card")
+		}
+
+		card := Card(matches[2])
+		cards := repeatCard(card, numberOfCard)
+
+		return cards, true
+	}
+	return nil, false
+}
+
+func repeatCard(card Card, numberOfCard int) []Card {
+	cards := make([]Card, numberOfCard)
+	for i := 0; i < numberOfCard; i++ {
+		cards[i] = card
+	}
+	return cards
 }
