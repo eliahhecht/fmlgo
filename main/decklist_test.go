@@ -1,13 +1,13 @@
 package main
 
-import 
-(
-    "testing"
-    "github.com/stretchr/testify/assert"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestDecklistParsesCorrectCards(t *testing.T) {
-    decklistString := `
+	decklistString := `
     1 Llanowar Wastes
     2 Black Lotus
     57 Swamp
@@ -16,24 +16,35 @@ func TestDecklistParsesCorrectCards(t *testing.T) {
     3 Ancestral Recall
     12 Plains`
 
-    decklist := parseDecklist(decklistString)
+	cards := parseDecklist(decklistString)
 
-    assert.Len(t, decklist.Cards, 75)
+	assert.Len(t, cards, 75)
 
-    assertContains(t, decklist, "Llanowar Wastes", 1)
-    assertContains(t, decklist, "Black Lotus", 2)
-    assertContains(t, decklist, "Swamp", 57)
-    assertContains(t, decklist, "Ancestral Recall", 3)
-    assertContains(t, decklist, "Plains", 12)
+	assertContains(t, cards, "Llanowar Wastes", 1)
+	assertContains(t, cards, "Black Lotus", 2)
+	assertContains(t, cards, "Swamp", 57)
+	assertContains(t, cards, "Ancestral Recall", 3)
+	assertContains(t, cards, "Plains", 12)
 }
 
-func assertContains(t *testing.T, decklist Decklist, needle Card, expectedNumber int) {
-    numberFound := 0
-    for _, card := range decklist.Cards {
-        if card == needle {
-            numberFound++
-        }
-    }
+func assertContains(t *testing.T, haystack []Card, needle Card, expectedNumber int) {
+	numberFound := 0
+	for _, card := range haystack {
+		if card == needle {
+			numberFound++
+		}
+	}
 
-    assert.Equal(t, expectedNumber, numberFound)
+	assert.Equal(t, expectedNumber, numberFound)
+}
+
+//ehtodo test makes sure 75 cards
+
+func TestDecklistParsesMultiplierFromFileName(t *testing.T) {
+	systemUnderTest := decklistLoader{
+		loadFile: func(string) []byte { return nil }}
+
+	var decklist = systemUnderTest.loadDecklist("foo.1.3.txt")
+
+	assert.Equal(t, 1.3, decklist.ScoreMultiplier)
 }

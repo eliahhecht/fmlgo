@@ -1,6 +1,7 @@
 package main
 
 import (
+	"path"
 	"regexp"
 	"strconv"
 	"strings"
@@ -14,12 +15,40 @@ type Decklist struct {
 
 var cardLineRegex = regexp.MustCompile(`(\d+) (.*)`)
 
-func loadDecklist(path string) Decklist {
-	fileContents := string(readFile(path))
-	return parseDecklist(fileContents)
+type fileLoader func(path string) []byte
+
+type decklistLoader struct {
+	loadFile fileLoader
 }
 
-func parseDecklist(decklist string) Decklist {
+func newDecklistLoader() decklistLoader {
+	return decklistLoader{readFile}
+}
+
+func (l decklistLoader) loadDecklist(path string) Decklist {
+	fileContents := string(l.loadFile(path))
+	cards := parseDecklist(fileContents)
+	multiplier := extractMultiplier(path)
+	return Decklist{cards, multiplier}
+}
+
+// matches filenames like FooBar.1.3.txt, where 1.3 is the multiplier
+var fileNameRegex = regexp.MustCompile(`[^\.]+\.([\d\.]+)\.txt`)
+
+func extractMultiplier(filePath string) float64 {
+	fileName := path.Base(filePath)
+	matches := fileNameRegex.FindStringSubmatch(fileName)
+	if len(matches) == 2 {
+		multiplier, err := strconv.ParseFloat(matches[1], 64)
+		if err == nil {
+			return multiplier
+		}
+	}
+
+	return 1.0
+}
+
+func parseDecklist(decklist string) []Card {
 	lines := strings.Split(decklist, "\n")
 	allCards := []Card{}
 	for _, line := range lines {
@@ -28,7 +57,7 @@ func parseDecklist(decklist string) Decklist {
 			allCards = append(allCards, newCards...)
 		}
 	}
-	return Decklist{Cards: allCards}
+	return allCards
 }
 
 func parseLine(line string) (cards []Card, ok bool) {

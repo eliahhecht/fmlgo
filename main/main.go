@@ -1,9 +1,7 @@
 package main
 
 func main() {
-	var sets map[string]Set
-	readJsonFile("./AllSets.json", &sets)
-	ori := sets["ORI"]
+	ori := loadSet("ORI")
 
 	players := buildPlayers()
 
@@ -28,4 +26,8 @@ func buildCards(cardNames []string) []Card {
 		cards = append(cards, Card(cardName))
 	}
 	return cards
+}
+
+func loadDecklists() []Decklist {
+	loader := newDecklistLoader()
 }
