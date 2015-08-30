@@ -11,9 +11,11 @@ type setDto struct {
 	Cards []cardDto
 }
 
+const cardDataFile string = "../data/AllSets.json"
+
 func loadSet(setName string) Set {
 	var sets map[string]Set
-	readJsonFile("./AllSets.json", &sets)
+	readJsonFile(cardDataFile, &sets)
 	return sets[setName]
 }
 

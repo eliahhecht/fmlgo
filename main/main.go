@@ -86,9 +86,11 @@ func printCardScores(w io.Writer, score ScoreResult) {
 	}
 }
 
+const cardOwnersFile string = "../data/owners.json"
+
 func buildPlayers() []Player {
 	var playersMap map[string][]string
-	readJsonFile("./owners.json", &playersMap)
+	readJsonFile(cardOwnersFile, &playersMap)
 
 	var players []Player
 	for k, v := range playersMap {
