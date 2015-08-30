@@ -78,11 +78,12 @@ func (sm *sortedScoreMap) Swap(i, j int) {
 }
 
 func printCardScores(w io.Writer, score ScoreResult) {
-	sorted := newSortedScoreMap(score)
-	sort.Sort(&sorted)
+	sortable := newSortedScoreMap(score)
+	sort.Sort(sort.Reverse(&sortable))
 
-	for cardName, cardScore := range sorted.m {
-		fmt.Fprintf(w, "   %v: \t%.1f\n", cardName, cardScore)
+	for _, cardName := range sortable.keys {
+		cardScore := sortable.m[cardName]
+		fmt.Fprintf(w, "   %v \t%.1f\n", cardName, cardScore)
 	}
 }
 
