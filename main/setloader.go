@@ -1,5 +1,7 @@
 package main
 
+import "encoding/json"
+
 type cardDto struct {
 	Name string
 }
@@ -10,18 +12,22 @@ type setDto struct {
 }
 
 func loadSet(setName string) Set {
-	var sets map[string]setDto
+	var sets map[string]Set
 	readJsonFile("./AllSets.json", &sets)
-	return convertToSet(sets[setName])
+	return sets[setName]
 }
 
-func convertToSet(dto setDto) Set {
-	numberOfCards := len(dto.Cards)
-	cards := make([]Card, numberOfCards)
-
-	for i, c := range dto.Cards {
-		cards[i] = Card(c.Name)
+// UnmarshalJSON decodes a Set from an MtgJson file
+func (s *Set) UnmarshalJSON(b []byte) error {
+	var dto setDto
+	err := json.Unmarshal(b, &dto)
+	if err == nil {
+		s.Code = dto.Code
+		s.Cards = make([]Card, len(dto.Cards))
+		for i, c := range dto.Cards {
+			s.Cards[i] = Card(c.Name)
+		}
+		return nil
 	}
-
-	return Set{dto.Code, cards}
+	return err
 }
