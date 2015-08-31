@@ -31,25 +31,20 @@ func (p *Player) hasCard(needle Card) bool {
 	return false
 }
 
-func calculateScore(players []Player, decklists []Decklist) map[string]ScoreResult {
+func calculateScore(players []Player, cardScores map[Card]float64) map[string]ScoreResult {
 	result := make(map[string]ScoreResult)
 
 	for _, player := range players {
-		result[player.Name] = scorePlayer(player, decklists)
+		result[player.Name] = scorePlayer(player, cardScores)
 	}
 
 	return result
 }
 
-func scorePlayer(player Player, decklists []Decklist) ScoreResult {
+func scorePlayer(player Player, cardScores map[Card]float64) ScoreResult {
 	playerResult := newScoreResult()
-	for _, decklist := range decklists {
-		for _, decklistCard := range decklist.Cards {
-			if player.hasCard(decklistCard) {
-				playerResult.addCard(decklistCard, decklist.ScoreMultiplier)
-			}
-		}
+	for _, playerCard := range player.Cards {
+		playerResult.CardScores[playerCard] = cardScores[playerCard]
 	}
-
 	return playerResult
 }

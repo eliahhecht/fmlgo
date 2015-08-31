@@ -23,8 +23,9 @@ func main() {
 	confirmCardsAreLegal(players, []Set{ori})
 
 	loadDecklists()
+	oriCardScores := ScoreCards(decklists, ori.Cards)
 
-	scores := calculateScore(players, decklists)
+	scores := calculateScore(players, oriCardScores)
 
 	outputScores(scores)
 }
