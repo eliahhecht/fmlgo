@@ -1,0 +1,37 @@
+2 Dig Through Time
+1 True-Name Nemesis
+2 Abrupt Decay
+4 Deathrite Shaman
+4 Delver of Secrets
+1 Liliana of the Veil
+3 Dismember
+2 Spell Pierce
+1 Disfigure
+2 Misty Rainforest
+2 Scalding Tarn
+4 Ponder
+2 Thoughtseize
+4 Tarmogoyf
+2 Polluted Delta
+2 Flooded Strand
+4 Daze
+4 Brainstorm
+4 Wasteland
+4 Force of Will
+3 Underground Sea
+3 Tropical Island
+
+Sideboard
+1 True-Name Nemesis
+1 Notion Thief
+1 Golgari Charm
+1 Grafdigger's Cage
+2 Flusterstorm
+2 Surgical Extraction
+1 Vendilion Clique
+2 Thoughtseize
+1 Darkblast
+1 Life from the Loam
+1 Pithing Needle
+1 Dread of Night
+

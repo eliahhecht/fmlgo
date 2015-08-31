@@ -1,0 +1,36 @@
+4 Monastery Swiftspear
+3 Dig Through Time
+2 True-Name Nemesis
+2 Snapcaster Mage
+4 Delver of Secrets
+4 Gitaxian Probe
+1 Dismember
+1 Preordain
+1 Forked Bolt
+2 Scalding Tarn
+4 Ponder
+3 Polluted Delta
+3 Flooded Strand
+2 Island
+4 Daze
+4 Brainstorm
+3 Wasteland
+4 Force of Will
+1 Pyroblast
+4 Volcanic Island
+4 Lightning Bolt
+
+Sideboard
+1 Eidolon of the Great Revel
+1 Grafdigger's Cage
+2 Surgical Extraction
+2 Smash to Smithereens
+1 Vendilion Clique
+1 Rough
+1 Sulfur Elemental
+1 Sulfuric Vortex
+2 Submerge
+1 Blood Moon
+1 Pyroblast
+1 Red Elemental Blast
+

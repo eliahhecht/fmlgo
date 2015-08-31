@@ -1,0 +1,29 @@
+2 Harbinger of the Tides
+4 True-Name Nemesis
+4 Master of the Pearl Trident
+4 Cavern of Souls
+3 Phantasmal Image
+4 Cursecatcher
+4 Mutavault
+1 Vendilion Clique
+4 Silvergill Adept
+1 Umezawa's Jitte
+4 Aether Vial
+4 Chalice of the Void
+10 Island
+4 Lord of Atlantis
+3 Wasteland
+4 Force of Will
+
+Sideboard
+1 Grafdigger's Cage
+2 Mindbreak Trap
+2 Spell Pierce
+1 Relic of Progenitus
+2 Pithing Needle
+1 Arcane Laboratory
+1 Misdirection
+2 Back to Basics
+2 Gilded Drake
+1 Hurkyl's Recall
+

@@ -1,0 +1,38 @@
+1 Tragic Arrogance
+2 Nissa, Vastwood Seer
+2 Languish
+3 Den Protector
+1 Tasigur, the Golden Fang
+4 Sandsteppe Citadel
+4 Siege Rhino
+4 Abzan Charm
+4 Temple of Malady
+1 Silence the Believers
+4 Courser of Kruphix
+1 Bile Blight
+4 Temple of Silence
+3 Hero's Downfall
+3 Elspeth, Sun's Champion
+1 Ultimate Price
+4 Thoughtseize
+1 Urborg, Tomb of Yawgmoth
+4 Windswept Heath
+3 Forest
+2 Plains
+2 Caves of Koilos
+2 Llanowar Wastes
+
+Sideboard
+1 Tragic Arrogance
+1 Dromoka's Command
+1 Ugin, the Spirit Dragon
+1 Sorin, Solemn Visitor
+1 Ajani, Mentor of Heroes
+2 Drown in Sorrow
+1 Bile Blight
+1 Unravel the Aether
+2 Glare of Heresy
+2 Fleecemane Lion
+1 Ultimate Price
+1 Duress
+

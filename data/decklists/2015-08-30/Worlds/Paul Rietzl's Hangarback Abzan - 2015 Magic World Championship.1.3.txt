@@ -1,0 +1,37 @@
+1 Ajani, Mentor of Heroes
+2 Elspeth, Sun's Champion
+1 Sorin, Solemn Visitor
+4 Anafenza, the Foremost
+2 Den Protector
+4 Fleecemane Lion
+4 Hangarback Walker
+4 Siege Rhino
+2 Wingmate Roc
+4 Abzan Charm
+2 Dromoka's Command
+1 Hero's Downfall
+1 Murderous Cut
+1 Ultimate Price
+1 Valorous Stance
+3 Caves of Koilos
+2 Forest
+3 Llanowar Wastes
+2 Plains
+4 Sandsteppe Citadel
+2 Temple of Malady
+2 Temple of Plenty
+3 Temple of Silence
+1 Urborg, Tomb of Yawgmoth
+4 Windswept Heath
+
+
+1 Dromoka's Command
+1 Hero's Downfall
+2 Ultimate Price
+1 Herald of Torment
+1 Tasigur, the Golden Fang
+1 Bile Blight
+1 Self-Inflicted Wound
+1 Surge of Righteousness
+4 Thoughtseize
+2 Tragic Arrogance
