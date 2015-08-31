@@ -14,6 +14,8 @@ var decklistDir = flag.String(
 	"decklistDir", "decklists", "path to decklists for scoring")
 
 func main() {
+	flag.Parse()
+
 	ori := loadSet("ORI")
 
 	players := buildPlayers()
@@ -116,6 +118,7 @@ func loadDecklists() {
 }
 
 func loadDecklist(path string, f os.FileInfo, err error) error {
+	fmt.Println("Loading ", path)
 	if !f.IsDir() {
 		loader := newDecklistLoader()
 		decklist := loader.loadDecklist(path)
