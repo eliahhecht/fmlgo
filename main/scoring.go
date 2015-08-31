@@ -9,6 +9,18 @@ func newScoreResult() ScoreResult {
 	return ScoreResult{CardScores: make(map[Card]float64)}
 }
 
+// OverallResult represents the overall scoring for a given week
+type OverallResult struct {
+	PlayerScores      map[string]ScoreResult
+	UnownedCardScores map[Card]float64
+}
+
+func newOverallResult() OverallResult {
+	return OverallResult{
+		PlayerScores:      make(map[string]ScoreResult),
+		UnownedCardScores: make(map[Card]float64)}
+}
+
 func (sr *ScoreResult) addCard(c Card, scoreMultiplier float64) {
 	sr.CardScores[c] += 1.0 * scoreMultiplier
 }
@@ -31,20 +43,32 @@ func (p *Player) hasCard(needle Card) bool {
 	return false
 }
 
-func calculateScore(players []Player, cardScores map[Card]float64) map[string]ScoreResult {
-	result := make(map[string]ScoreResult)
+func calculateScore(players []Player, cardScores map[Card]float64) OverallResult {
+	result := newOverallResult()
+	unownedCards := copy(cardScores)
+	result.UnownedCardScores = unownedCards
 
 	for _, player := range players {
-		result[player.Name] = scorePlayer(player, cardScores)
+		result.PlayerScores[player.Name] = scorePlayer(
+			player, cardScores, unownedCards)
 	}
 
 	return result
 }
 
-func scorePlayer(player Player, cardScores map[Card]float64) ScoreResult {
+func copy(m map[Card]float64) map[Card]float64 {
+	copy := make(map[Card]float64)
+	for k, v := range m {
+		copy[k] = v
+	}
+	return copy
+}
+
+func scorePlayer(player Player, cardScores map[Card]float64, unownedCards map[Card]float64) ScoreResult {
 	playerResult := newScoreResult()
 	for _, playerCard := range player.Cards {
 		playerResult.CardScores[playerCard] = cardScores[playerCard]
+		unownedCards[playerCard] = 0
 	}
 	return playerResult
 }

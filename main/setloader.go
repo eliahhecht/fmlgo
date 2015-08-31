@@ -3,7 +3,8 @@ package main
 import "encoding/json"
 
 type cardDto struct {
-	Name string
+	Name   string
+	Rarity string
 }
 
 type setDto struct {
@@ -25,9 +26,10 @@ func (s *Set) UnmarshalJSON(b []byte) error {
 	err := json.Unmarshal(b, &dto)
 	if err == nil {
 		s.Code = dto.Code
-		s.Cards = make([]Card, len(dto.Cards))
-		for i, c := range dto.Cards {
-			s.Cards[i] = Card(c.Name)
+		for _, c := range dto.Cards {
+			if c.Rarity != "Basic Land" {
+				s.Cards = append(s.Cards, Card(c.Name))
+			}
 		}
 		return nil
 	}

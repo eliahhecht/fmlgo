@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"io"
+	"math"
 	"os"
 	"path/filepath"
 	"sort"
@@ -30,21 +31,24 @@ func main() {
 	outputScores(scores)
 }
 
-func outputScores(scores map[string]ScoreResult) {
+func outputScores(scores OverallResult) {
 	w := new(tabwriter.Writer)
 	w.Init(os.Stdout, 0, 8, 0, '\t', 0)
 
 	var playerNames []string
-	for playerName := range scores {
+	for playerName := range scores.PlayerScores {
 		playerNames = append(playerNames, playerName)
 	}
 	sort.Strings(playerNames)
 	for _, playerName := range playerNames {
-		score := scores[playerName]
+		score := scores.PlayerScores[playerName]
 		fmt.Fprintf(w, "== %s: \t%.1f ==\n", playerName, score.Total())
-		printCardScores(w, score)
+		printCardScores(w, score.CardScores, math.MaxInt32)
 		fmt.Fprintln(w, "\t")
 	}
+
+	fmt.Fprintln(w, "Highest-scoring unowned cards: ")
+	printCardScores(w, scores.UnownedCardScores, 10)
 
 	w.Flush()
 }
@@ -54,9 +58,9 @@ type sortedScoreMap struct {
 	keys []Card
 }
 
-func newSortedScoreMap(scores ScoreResult) sortedScoreMap {
-	sorted := sortedScoreMap{m: scores.CardScores}
-	for key := range scores.CardScores {
+func newSortedScoreMap(cardScores map[Card]float64) sortedScoreMap {
+	sorted := sortedScoreMap{m: cardScores}
+	for key := range cardScores {
 		sorted.keys = append(sorted.keys, key)
 	}
 	return sorted
@@ -80,13 +84,17 @@ func (sm *sortedScoreMap) Swap(i, j int) {
 	sm.keys[i], sm.keys[j] = sm.keys[j], sm.keys[i]
 }
 
-func printCardScores(w io.Writer, score ScoreResult) {
-	sortable := newSortedScoreMap(score)
+func printCardScores(w io.Writer, cardScores map[Card]float64, max int) {
+	sortable := newSortedScoreMap(cardScores)
 	sort.Sort(sort.Reverse(&sortable))
 
-	for _, cardName := range sortable.keys {
+	for i, cardName := range sortable.keys {
 		cardScore := sortable.m[cardName]
 		fmt.Fprintf(w, "   %v \t%.1f\n", cardName, cardScore)
+
+		if i >= max {
+			break
+		}
 	}
 }
 
