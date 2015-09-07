@@ -11,10 +11,10 @@ import (
 	"text/tabwriter"
 )
 
-var decklistDir = flag.String(
-	"decklistDir", "decklists", "path to decklists for scoring")
+var decklistDir string
 
 func main() {
+	parseFlags()
 	flag.Parse()
 
 	ori := loadSet("ORI")
@@ -29,6 +29,14 @@ func main() {
 	scores := calculateScore(players, oriCardScores)
 
 	outputScores(scores)
+}
+
+func parseFlags() {
+	flag.Parse()
+	if len(flag.Args()) != 1 {
+		panic("Must be called with exactly one argument (path to decklists dir)")
+	}
+	decklistDir = flag.Arg(0)
 }
 
 func outputScores(scores OverallResult) {
@@ -123,7 +131,7 @@ func buildCards(cardNames []string) []Card {
 var decklists []Decklist
 
 func loadDecklists() {
-	filepath.Walk(*decklistDir, loadDecklist)
+	filepath.Walk(decklistDir, loadDecklist)
 }
 
 func loadDecklist(path string, f os.FileInfo, err error) error {
