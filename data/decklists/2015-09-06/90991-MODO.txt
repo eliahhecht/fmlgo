@@ -1,0 +1,34 @@
+4 Collected Company
+4 Sliver Hive
+3 Diffusion Sliver
+2 Blur Sliver
+4 Manaweft Sliver
+2 Sentinel Sliver
+4 Predatory Sliver
+4 Galerider Sliver
+1 Syphon Sliver
+2 Abrupt Decay
+4 Cavern of Souls
+4 Mutavault
+1 Darkheart Sliver
+2 Necrotic Sliver
+4 Sinew Sliver
+3 Sedge Sliver
+1 Blood Crypt
+1 Breeding Pool
+2 Overgrown Tomb
+4 Aether Vial
+1 Wooded Foothills
+2 Windswept Heath
+1 Forest
+
+Sideboard
+2 Sliver Hivelord
+2 Bonescythe Sliver
+2 Syphon Sliver
+2 Abrupt Decay
+1 Darkheart Sliver
+1 Shadow Sliver
+2 Telekinetic Sliver
+3 Harmonic Sliver
+

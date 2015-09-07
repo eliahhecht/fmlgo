@@ -1,0 +1,36 @@
+2 Become Immense
+2 Wild Defiance
+1 Mutagenic Growth
+4 Glistener Elf
+2 Apostle's Blessing
+4 Blighted Agent
+2 Gitaxian Probe
+2 Spellskite
+1 Dismember
+4 Inkmoth Nexus
+4 Groundswell
+1 Spell Pierce
+4 Verdant Catacombs
+4 Vines of Vastwood
+4 Noble Hierarch
+1 Dryad Arbor
+3 Might of Old Krosa
+3 Breeding Pool
+2 Sylvan Scrying
+4 Wooded Foothills
+2 Forest
+2 Rancor
+2 Pendelhaven
+
+Sideboard
+1 Wild Defiance
+1 Spellskite
+1 Dismember
+1 Viridian Corrupter
+2 Twisted Image
+3 Nature's Claim
+1 Spell Pierce
+2 Relic of Progenitus
+2 Wall of Roots
+1 Hurkyl's Recall
+

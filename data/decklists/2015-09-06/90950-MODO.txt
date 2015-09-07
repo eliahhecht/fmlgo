@@ -1,0 +1,41 @@
+2 Dragonlord Ojutai
+1 Valorous Stance
+2 Supreme Verdict
+1 Detention Sphere
+4 Restoration Angel
+2 Snapcaster Mage
+1 Moorland Haunt
+2 Blade Splicer
+2 Seachrome Coast
+3 Wall of Omens
+4 Celestial Colonnade
+3 Tectonic Edge
+2 Glacial Fortress
+4 Path to Exile
+1 Kitchen Finks
+2 Vendilion Clique
+2 Cryptic Command
+2 Think Twice
+2 Hallowed Fountain
+2 Spell Snare
+3 Remand
+4 Flooded Strand
+3 Plains
+4 Island
+2 Mana Leak
+
+Sideboard
+1 Rest in Peace
+1 Jace, Architect of Thought
+2 Stony Silence
+1 Timely Reinforcements
+1 Dismember
+1 Spellskite
+1 Dispel
+2 Kor Firewalker
+1 Celestial Purge
+1 Negate
+1 Kataki, War's Wage
+1 Engineered Explosives
+1 Disenchant
+
