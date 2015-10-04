@@ -17,14 +17,14 @@ func main() {
 	parseFlags()
 	flag.Parse()
 
-	ori := loadSet("ORI")
+	legalCards := loadCards([]string{"KTK", "FRF", "DTK", "ORI", "BFZ"})
 
 	players := buildPlayers()
 
-	confirmCardsAreLegal(players, []Set{ori})
+	confirmCardsAreLegal(players, legalCards)
 
 	loadDecklists()
-	oriCardScores := ScoreCards(decklists, ori.Cards)
+	oriCardScores := ScoreCards(decklists, legalCards)
 
 	scores := calculateScore(players, oriCardScores)
 

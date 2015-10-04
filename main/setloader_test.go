@@ -6,12 +6,13 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var set = loadSet("ORI")
+var cards = loadCards([]string{"ORI", "BFZ"})
 
-func TestLoadSetReturnsCorrectCards(t *testing.T) {
-	assert.Contains(t, set.Cards, Card("Yavimaya Coast"))
+func TestLoadSetsDoesNotIncludeBasicLands(t *testing.T) {
+	assert.NotContains(t, cards, Card("Swamp"))
 }
 
-func TestLoadSetDoesNotIncludeBasicLands(t *testing.T) {
-	assert.NotContains(t, set.Cards, Card("Swamp"))
+func TestLoadCardsContainsCorrectCards(t *testing.T) {
+	assert.Contains(t, cards, Card("Yavimaya Coast"))
+	assert.Contains(t, cards, Card("Transgress the Mind"))
 }

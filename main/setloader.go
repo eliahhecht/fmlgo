@@ -14,10 +14,21 @@ type setDto struct {
 
 const cardDataFile string = "../data/AllSets.json"
 
-func loadSet(setName string) Set {
+func loadCards(setNames []string) []Card {
+	sets := loadAllSets()
+
+	var cards []Card
+	for _, setName := range setNames {
+		set := sets[setName]
+		cards = append(cards, set.Cards...)
+	}
+	return cards
+}
+
+func loadAllSets() map[string]Set {
 	var sets map[string]Set
 	readJsonFile(cardDataFile, &sets)
-	return sets[setName]
+	return sets
 }
 
 // UnmarshalJSON decodes a Set from an MtgJson file

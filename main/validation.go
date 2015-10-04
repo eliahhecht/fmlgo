@@ -2,28 +2,20 @@ package main
 
 import "fmt"
 
-func confirmCardsAreLegal(players []Player, legalSets []Set) {
+func confirmCardsAreLegal(players []Player, legalCards []Card) {
 	for _, player := range players {
 		for _, card := range player.Cards {
-			if !anySetContainsCard(legalSets, card) {
-				panic(fmt.Sprintf("%s's card %s not found in any legal set", player.Name, card))
+			if !cardIsLegal(legalCards, card) {
+				panic(fmt.Sprintf("%s's card %s not found in any legal set (%v legal cards)",
+					player.Name, card, len(legalCards)))
 			}
 		}
 	}
 }
 
-func anySetContainsCard(sets []Set, card Card) bool {
-	for _, set := range sets {
-		if set.containsCard(card) {
-			return true
-		}
-	}
-	return false
-}
-
-func (set Set) containsCard(targetCard Card) bool {
-	for _, card := range set.Cards {
-		if card == targetCard {
+func cardIsLegal(legalCards []Card, card Card) bool {
+	for _, legalCard := range legalCards {
+		if card == legalCard {
 			return true
 		}
 	}
