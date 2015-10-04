@@ -1,57 +1,68 @@
 {
     "Dan":
     [
-        "Shivan Reef",
-        "Exquisite Firecraft",
-        "Abbot of Keral Keep",
-        "Smash to Smithereens",
-        "Vryn Wingmare",
-        "Starfield of Nyx",
-        "Goblin Piledriver",
-        "Plummet"
+        "Ob Nixilis Reignited",
+        "Monastery Swiftspear",
+        "Quarantine Field",
+        "Atarka's Command",
+        "Crux of Fate",
+        "Collected Company",
+        "Anafenza the Foremost",
+        "Llanowar Wastes"
     ],
     "Patrick":
     [
-        "Chief of the Foundry",
-        "Whirler Rogue",
-        "Thopter Spy Network",
-        "Caustic Caterpillar",
-        "Harbinger of the Tides",
-        "Suppression Bonds",
-        "Sigiled Starfish",
-        "Dragon Fodder"
+        "Sorin, Solemn Visitor",
+        "Monastery Mentor",
+        "Ghostfire Blade",
+        "Dromoka's Command",
+        "Treasure Cruise",
+        "Complete Disregard",
+        "Canopy Vista",
+        "Windswept Heath"
     ],
     "Paul":
     [
-        "Llanowar Wastes",
-        "Nissa, Vastwood Seer",
-        "Languish",
-        "Negate",
-        "Fiery Impulse",
-        "Archangel of Tithes",
-        "Pia and Kiran Nalaar",
-        "Evolutionary Leap"
+        "Liliana, Defiant Necromancer",
+        "Den Protector",
+        "Hangarback Walker",
+        "Wild Slash",
+        "Roast",
+        "Radiant Flames",
+        "Sandsteppe Citadel",
+        "Bloodstained Mire"
     ],
     "Eliah":
     [
-        "Caves of Koilos",
-        "Hangarback Walker",
-        "Yavimaya Coast",
-        "Day's Undoing",
-        "Herald of the Pantheon",
-        "Tragic Arrogance",
-        "Molten Vortex",
-        "Disciple of the Ring"
+        "Gideon, Ally of Zendikar",
+        "Drana, Liberator of Malakir",
+        "Stasis Snare",
+        "Valorous Stance",
+        "Ruinous Path",
+        "Scatter to the Winds",
+        "Undergrowth Champion",
+        "Wooded Foothills"
     ],
     "Marcio":
     [
-        "Battlefield Forge",
         "Jace, Vryn's Prodigy",
-        "Liliana, Heretical Healer",
-        "Chandra, Fire of Kaladesh",
-        "Sphinx's Tutelage",
-        "Magmatic Insight",
+        "Nissa, Vastwood Seer",
+        "Retreat to Coralhem",
+        "Abzan Charm",
+        "Planar Outburst",
+        "Dig throught Time",
+        "Sunken Hollow",
+        "Flooded Strand"
+    ],
+    "John":
+    [
         "Kytheon, Hero of Akros",
-        "Evolving Wilds"
+        "Siege Rhino",
+        "Outpost Siege",
+        "Ultimate Price",
+        "Exquisite Firecraft",
+        "Duress",
+        "Abbot of Kheral Keep",
+        "Polluted Delta"
     ]
 }
