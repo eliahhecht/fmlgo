@@ -5,9 +5,12 @@ import (
 	"io/ioutil"
 )
 
-func readJsonFile(path string, contentsHolder interface{}) {
+func readJSONFile(path string, contentsHolder interface{}) {
 	var fileContents = readFile(path)
-	json.Unmarshal(fileContents, contentsHolder)
+	err := json.Unmarshal(fileContents, contentsHolder)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func readFile(path string) []byte {

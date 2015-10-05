@@ -27,7 +27,7 @@ func loadCards(setNames []string) []Card {
 
 func loadAllSets() map[string]Set {
 	var sets map[string]Set
-	readJsonFile(cardDataFile, &sets)
+	readJSONFile(cardDataFile, &sets)
 	return sets
 }
 

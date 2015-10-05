@@ -7,11 +7,13 @@ import (
 )
 
 var testPlayer = Player{
-	Name:  "Test Player",
-	Cards: []Card{"Black Lotus"}}
+	Name:      "Test Player",
+	Cards:     []Card{"Black Lotus"},
+	Sideboard: []Card{"Storm Crow"}}
 
 var testCardScores = map[Card]float64{
-	"Black Lotus": 2}
+	"Black Lotus": 2,
+	"Storm Crow":  100}
 
 func TestScoringForSimpleCase(t *testing.T) {
 	score := invokeCalculateScore().PlayerScores["Test Player"]
@@ -43,4 +45,10 @@ func TestScoringForUnownedCardsDoesNotIncludeOwnedCards(t *testing.T) {
 	score := invokeCalculateScore()
 
 	assert.Equal(t, 0.0, score.UnownedCardScores["Black Lotus"])
+}
+
+func TestScoringForSideboardCards(t *testing.T) {
+	score := invokeCalculateScore().PlayerScores["Test Player"]
+
+	assert.Equal(t, 100.0, score.SideboardScores["Storm Crow"])
 }

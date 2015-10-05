@@ -1,68 +1,116 @@
 {
     "Dan":
-    [
-        "Ob Nixilis Reignited",
-        "Monastery Swiftspear",
-        "Quarantine Field",
-        "Atarka's Command",
-        "Crux of Fate",
-        "Collected Company",
-        "Anafenza, the Foremost",
-        "Llanowar Wastes"
-    ],
+    {
+        "main":
+        [
+            "Ob Nixilis Reignited",
+            "Monastery Swiftspear",
+            "Quarantine Field",
+            "Atarka's Command",
+            "Crux of Fate",
+            "Collected Company",
+            "Anafenza, the Foremost",
+            "Llanowar Wastes"
+        ],
+        "sideboard":
+        [
+            "Prairie Stream",
+            "Scalding Tarn"
+        ]
+    },
     "Patrick":
-    [
-        "Sorin, Solemn Visitor",
-        "Monastery Mentor",
-        "Ghostfire Blade",
-        "Dromoka's Command",
-        "Treasure Cruise",
-        "Complete Disregard",
-        "Canopy Vista",
-        "Windswept Heath"
-    ],
+    {
+        "main":
+        [
+            "Sorin, Solemn Visitor",
+            "Monastery Mentor",
+            "Ghostfire Blade",
+            "Dromoka's Command",
+            "Treasure Cruise",
+            "Complete Disregard",
+            "Canopy Vista",
+            "Windswept Heath"
+        ],
+        "sideboard":
+        [
+            "Cinder Glade",
+            "Smoldering Marsh"
+        ]
+    },
     "Paul":
-    [
-        "Liliana, Heretical Healer",
-        "Den Protector",
-        "Hangarback Walker",
-        "Wild Slash",
-        "Roast",
-        "Radiant Flames",
-        "Sandsteppe Citadel",
-        "Bloodstained Mire"
-    ],
+    {
+        "main":
+        [
+            "Liliana, Heretical Healer",
+            "Den Protector",
+            "Hangarback Walker",
+            "Wild Slash",
+            "Roast",
+            "Radiant Flames",
+            "Sandsteppe Citadel",
+            "Bloodstained Mire"
+        ],
+        "sideboard":
+        [
+            "Dispel",
+            "Gurmag Angler"
+        ]
+    },
     "Eliah":
-    [
-        "Gideon, Ally of Zendikar",
-        "Drana, Liberator of Malakir",
-        "Stasis Snare",
-        "Valorous Stance",
-        "Ruinous Path",
-        "Scatter to the Winds",
-        "Undergrowth Champion",
-        "Wooded Foothills"
-    ],
+    {
+        "main":
+        [
+            "Gideon, Ally of Zendikar",
+            "Drana, Liberator of Malakir",
+            "Stasis Snare",
+            "Valorous Stance",
+            "Ruinous Path",
+            "Scatter to the Winds",
+            "Undergrowth Champion",
+            "Wooded Foothills"
+        ],
+        "sideboard":
+        [
+            "Disdainful Stroke",
+            "Shambling Vent"
+        ]
+    },
     "Marcio":
-    [
-        "Jace, Vryn's Prodigy",
-        "Nissa, Vastwood Seer",
-        "Retreat to Coralhelm",
-        "Abzan Charm",
-        "Planar Outburst",
-        "Dig Through Time",
-        "Sunken Hollow",
-        "Flooded Strand"
-    ],
+    {
+        "main":
+        [
+            "Jace, Vryn's Prodigy",
+            "Nissa, Vastwood Seer",
+            "Retreat to Coralhelm",
+            "Abzan Charm",
+            "Planar Outburst",
+            "Dig Through Time",
+            "Sunken Hollow",
+            "Flooded Strand"
+        ],
+        "sideboard":
+        [
+            "Wingmate Roc",
+            "Mantis Rider"
+        ]
+    },
     "John":
-    [
-        "Kytheon, Hero of Akros",
-        "Siege Rhino",
-        "Outpost Siege",
-        "Ultimate Price",
-        "Exquisite Firecraft",
-        "Duress",
-        "Abbot of Keral Keep",
-        "Polluted Delta"
-    ]
+    {
+        "main":
+        [
+            "Kytheon, Hero of Akros",
+            "Siege Rhino",
+            "Outpost Siege",
+            "Ultimate Price",
+            "Exquisite Firecraft",
+            "Duress",
+            "Abbot of Keral Keep",
+            "Polluted Delta"
+        ],
+        "sideboard":
+        [
+            "Soulfire Grand Master",
+            "Kologhan's Command"
+        ]
+    }
 }

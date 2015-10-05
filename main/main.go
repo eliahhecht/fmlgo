@@ -109,12 +109,14 @@ func printCardScores(w io.Writer, cardScores map[Card]float64, max int) {
 const cardOwnersFile string = "../data/owners.json"
 
 func buildPlayers() []Player {
-	var playersMap map[string][]string
-	readJsonFile(cardOwnersFile, &playersMap)
+	var playersMap map[string]map[string][]string
+	readJSONFile(cardOwnersFile, &playersMap)
 
 	var players []Player
 	for k, v := range playersMap {
-		player := Player{Name: k, Cards: buildCards(v)}
+		mainDeck := buildCards(v["main"])
+		sideboard := buildCards(v["sideboard"])
+		player := Player{Name: k, Cards: mainDeck, Sideboard: sideboard}
 		players = append(players, player)
 	}
 	return players

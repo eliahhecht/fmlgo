@@ -2,11 +2,12 @@ package main
 
 // ScoreResult represents the score for a given player for a given week
 type ScoreResult struct {
-	CardScores map[Card]float64
+	CardScores      map[Card]float64
+	SideboardScores map[Card]float64
 }
 
 func newScoreResult() ScoreResult {
-	return ScoreResult{CardScores: make(map[Card]float64)}
+	return ScoreResult{CardScores: make(map[Card]float64), SideboardScores: make(map[Card]float64)}
 }
 
 // OverallResult represents the overall scoring for a given week
@@ -66,9 +67,19 @@ func copy(m map[Card]float64) map[Card]float64 {
 
 func scorePlayer(player Player, cardScores map[Card]float64, unownedCards map[Card]float64) ScoreResult {
 	playerResult := newScoreResult()
-	for _, playerCard := range player.Cards {
-		playerResult.CardScores[playerCard] = cardScores[playerCard]
-		unownedCards[playerCard] = 0
-	}
+	transferScores(playerResult.CardScores, cardScores, player.Cards, unownedCards)
+	transferScores(playerResult.SideboardScores, cardScores, player.Sideboard, unownedCards)
+
 	return playerResult
+}
+
+func transferScores(
+	destinationMap map[Card]float64,
+	sourceMap map[Card]float64,
+	cards []Card,
+	unownedCards map[Card]float64) {
+	for _, card := range cards {
+		destinationMap[card] = sourceMap[card]
+		unownedCards[card] = 0
+	}
 }
