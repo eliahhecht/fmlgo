@@ -50,7 +50,7 @@ func outputScores(scores OverallResult) {
 	sort.Strings(playerNames)
 	for _, playerName := range playerNames {
 		score := scores.PlayerScores[playerName]
-		fmt.Fprintf(w, "== %s: \t%.1f ==\n", playerName, score.Total())
+		fmt.Fprintf(w, "== %s: \t%d ==\n", playerName, score.Total())
 		printCardScores(w, score.CardScores, math.MaxInt32)
 		fmt.Fprintln(w, "\t")
 	}
