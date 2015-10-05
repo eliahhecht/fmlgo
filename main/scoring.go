@@ -31,15 +31,6 @@ func (sr ScoreResult) Total() int {
 	return total
 }
 
-func (p *Player) hasCard(needle Card) bool {
-	for _, playerCard := range p.Cards {
-		if playerCard == needle {
-			return true
-		}
-	}
-	return false
-}
-
 func calculateScore(players []Player, cardScores map[Card]int) OverallResult {
 	result := newOverallResult()
 	unownedCards := copy(cardScores)
