@@ -55,8 +55,8 @@ func outputScores(scores OverallResult) {
 		fmt.Fprintln(w, "\t")
 	}
 
-	fmt.Fprintln(w, "Highest-scoring unowned cards: ")
-	printCardScores(w, scores.UnownedCardScores, 10)
+	fmt.Fprintln(w, "Highest-scoring unfielded cards: ")
+	printCardScores(w, scores.UnownedCardScores, 50)
 
 	w.Flush()
 }
