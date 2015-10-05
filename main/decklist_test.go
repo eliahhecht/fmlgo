@@ -39,12 +39,3 @@ func assertContains(t *testing.T, haystack []Card, needle Card, expectedNumber i
 }
 
 //ehtodo test makes sure 75 cards
-
-func TestDecklistParsesMultiplierFromFileName(t *testing.T) {
-	systemUnderTest := decklistLoader{
-		loadFile: func(string) []byte { return nil }}
-
-	var decklist = systemUnderTest.loadDecklist("foo.1.3.txt")
-
-	assert.Equal(t, 1.3, decklist.ScoreMultiplier)
-}

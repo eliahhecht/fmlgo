@@ -62,11 +62,11 @@ func outputScores(scores OverallResult) {
 }
 
 type sortedScoreMap struct {
-	m    map[Card]float64
+	m    map[Card]int
 	keys []Card
 }
 
-func newSortedScoreMap(cardScores map[Card]float64) sortedScoreMap {
+func newSortedScoreMap(cardScores map[Card]int) sortedScoreMap {
 	sorted := sortedScoreMap{m: cardScores}
 	for key := range cardScores {
 		sorted.keys = append(sorted.keys, key)
@@ -92,13 +92,13 @@ func (sm *sortedScoreMap) Swap(i, j int) {
 	sm.keys[i], sm.keys[j] = sm.keys[j], sm.keys[i]
 }
 
-func printCardScores(w io.Writer, cardScores map[Card]float64, max int) {
+func printCardScores(w io.Writer, cardScores map[Card]int, max int) {
 	sortable := newSortedScoreMap(cardScores)
 	sort.Sort(sort.Reverse(&sortable))
 
 	for i, cardName := range sortable.keys {
 		cardScore := sortable.m[cardName]
-		fmt.Fprintf(w, "   %v \t%.1f\n", cardName, cardScore)
+		fmt.Fprintf(w, "   %v \t%d\n", cardName, cardScore)
 
 		if i >= max {
 			break
