@@ -1,0 +1,45 @@
+4 Bring to Light
+1 Smoldering Marsh
+1 Cinder Glade
+1 Shambling Vent
+1 Ruinous Path
+1 Canopy Vista
+1 Ugin's Insight
+1 Prairie Stream
+2 Lumbering Falls
+1 Sunken Hollow
+1 Languish
+2 Reave Soul
+4 Jace, Vryn's Prodigy
+2 Nissa, Vastwood Seer
+1 Gilt-Leaf Winnower
+1 Crux of Fate
+1 Silumgar, the Drifting Death
+2 Murderous Cut
+1 Sultai Charm
+4 Siege Rhino
+1 Utter End
+2 Disdainful Stroke
+4 Abzan Charm
+1 Clever Impersonator
+3 Bloodstained Mire
+1 Wooded Foothills
+2 Windswept Heath
+4 Polluted Delta
+4 Flooded Strand
+1 Swamp
+2 Forest
+1 Island
+1 Plains
+
+Sideboard
+2 Ob Nixilis Reignited
+3 Radiant Flames
+1 Radiant Purge
+1 Silumgar's Command
+2 Encase in Ice
+1 Silumgar, the Drifting Death
+2 Disdainful Stroke
+1 Anafenza, the Foremost
+2 Duress
+
