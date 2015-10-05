@@ -37,8 +37,7 @@ func calculateScore(players []Player, cardScores map[Card]int) OverallResult {
 	result.UnownedCardScores = unownedCards
 
 	for _, player := range players {
-		result.PlayerScores[player.Name] = scorePlayer(
-			player, cardScores, unownedCards)
+		result.PlayerScores[player.Name] = scorePlayer(player, cardScores, unownedCards)
 	}
 
 	return result
