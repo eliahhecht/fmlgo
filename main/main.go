@@ -52,6 +52,8 @@ func outputScores(scores OverallResult) {
 		score := scores.PlayerScores[playerName]
 		fmt.Fprintf(w, "== %s: \t%d ==\n", playerName, score.Total())
 		printCardScores(w, score.CardScores, math.MaxInt32)
+		fmt.Fprintln(w, "  Sideboard:")
+		printCardScores(w, score.SideboardScores, math.MaxInt32)
 		fmt.Fprintln(w, "\t")
 	}
 
