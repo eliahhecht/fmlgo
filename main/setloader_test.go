@@ -9,10 +9,28 @@ import (
 var cards = loadCards([]string{"ORI", "BFZ"})
 
 func TestLoadSetsDoesNotIncludeBasicLands(t *testing.T) {
-	assert.NotContains(t, cards, Card("Swamp"))
+	card := findCard("Swamp")
+	assert.Nil(t, card)
+}
+
+func findCard(needle CardName) *Card {
+	for _, card := range cards {
+		if card.Name == needle {
+			return &card
+		}
+	}
+	return nil
 }
 
 func TestLoadCardsContainsCorrectCards(t *testing.T) {
-	assert.Contains(t, cards, Card("Yavimaya Coast"))
-	assert.Contains(t, cards, Card("Transgress the Mind"))
+	yavimayaCoast := findCard("Yavimaya Coast")
+	assert.NotNil(t, yavimayaCoast)
+	transgress := findCard("Transgress the Mind")
+	assert.NotNil(t, transgress)
+}
+
+func TestLoadSetsLoadsCardTypes(t *testing.T) {
+	hangarbackWalker := *findCard("Hangarback Walker")
+
+	assert.Contains(t, hangarbackWalker.Types, CardType("Artifact"))
 }

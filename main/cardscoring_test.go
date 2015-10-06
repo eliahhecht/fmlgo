@@ -6,21 +6,19 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestCardScorer_ScoresCardCorrectly(t *testing.T) {
-	decklists := []Decklist{Decklist{Cards: []Card{"Black Lotus", "Black Lotus", "Storm Crow"}}}
+var testDecklists = []Decklist{Decklist{Cards: makeCards("Black Lotus", "Black Lotus", "Storm Crow")}}
 
-	legalCards := []Card{"Black Lotus"}
-	scoreResult := ScoreCards(decklists, legalCards)
+func TestCardScorer_ScoresCardCorrectly(t *testing.T) {
+	legalCards := makeCards("Black Lotus")
+	scoreResult := ScoreCards(testDecklists, legalCards)
 
 	assert.Equal(t, 2, scoreResult["Black Lotus"])
 }
 
 func TestCardScorer_DoesNotScoreIllegalCards(t *testing.T) {
-	decklists := []Decklist{Decklist{Cards: []Card{"Black Lotus", "Black Lotus", "Storm Crow"}}}
+	legalCards := makeCards("Storm Crow")
 
-	cards := []Card{"Storm Crow"}
-
-	scoreResult := ScoreCards(decklists, cards)
+	scoreResult := ScoreCards(testDecklists, legalCards)
 
 	assert.Equal(t, 0, scoreResult["Black Lotus"])
 }

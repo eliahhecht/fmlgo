@@ -2,24 +2,24 @@ package main
 
 // ScoreResult represents the score for a given player for a given week
 type ScoreResult struct {
-	CardScores      map[Card]int
-	SideboardScores map[Card]int
+	CardScores      map[CardName]int
+	SideboardScores map[CardName]int
 }
 
 func newScoreResult() ScoreResult {
-	return ScoreResult{CardScores: make(map[Card]int), SideboardScores: make(map[Card]int)}
+	return ScoreResult{CardScores: make(map[CardName]int), SideboardScores: make(map[CardName]int)}
 }
 
 // OverallResult represents the overall scoring for a given week
 type OverallResult struct {
 	PlayerScores      map[string]ScoreResult
-	UnownedCardScores map[Card]int
+	UnownedCardScores map[CardName]int
 }
 
 func newOverallResult() OverallResult {
 	return OverallResult{
 		PlayerScores:      make(map[string]ScoreResult),
-		UnownedCardScores: make(map[Card]int)}
+		UnownedCardScores: make(map[CardName]int)}
 }
 
 // Total is the player's total points for the week
@@ -31,7 +31,7 @@ func (sr ScoreResult) Total() int {
 	return total
 }
 
-func calculateScore(players []Player, cardScores map[Card]int) OverallResult {
+func calculateScore(players []Player, cardScores map[CardName]int) OverallResult {
 	result := newOverallResult()
 	unownedCards := copy(cardScores)
 	result.UnownedCardScores = unownedCards
@@ -43,15 +43,15 @@ func calculateScore(players []Player, cardScores map[Card]int) OverallResult {
 	return result
 }
 
-func copy(m map[Card]int) map[Card]int {
-	copy := make(map[Card]int)
+func copy(m map[CardName]int) map[CardName]int {
+	copy := make(map[CardName]int)
 	for k, v := range m {
 		copy[k] = v
 	}
 	return copy
 }
 
-func scorePlayer(player Player, cardScores map[Card]int, unownedCards map[Card]int) ScoreResult {
+func scorePlayer(player Player, cardScores map[CardName]int, unownedCards map[CardName]int) ScoreResult {
 	playerResult := newScoreResult()
 	transferScores(playerResult.CardScores, cardScores, player.Cards, unownedCards)
 	transferScores(playerResult.SideboardScores, cardScores, player.Sideboard, unownedCards)
@@ -60,12 +60,12 @@ func scorePlayer(player Player, cardScores map[Card]int, unownedCards map[Card]i
 }
 
 func transferScores(
-	destinationMap map[Card]int,
-	sourceMap map[Card]int,
+	destinationMap map[CardName]int,
+	sourceMap map[CardName]int,
 	cards []Card,
-	unownedCards map[Card]int) {
+	unownedCards map[CardName]int) {
 	for _, card := range cards {
-		destinationMap[card] = sourceMap[card]
-		unownedCards[card] = 0
+		destinationMap[card.Name] = sourceMap[card.Name]
+		unownedCards[card.Name] = 0
 	}
 }

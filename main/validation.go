@@ -15,7 +15,7 @@ func confirmCardsAreLegal(players []Player, legalCards []Card) {
 
 func cardIsLegal(legalCards []Card, card Card) bool {
 	for _, legalCard := range legalCards {
-		if card == legalCard {
+		if card.Name == legalCard.Name {
 			return true
 		}
 	}

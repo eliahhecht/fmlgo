@@ -8,10 +8,10 @@ import (
 
 var testPlayer = Player{
 	Name:      "Test Player",
-	Cards:     []Card{"Black Lotus"},
-	Sideboard: []Card{"Storm Crow"}}
+	Cards:     makeCards("Black Lotus"),
+	Sideboard: makeCards("Storm Crow")}
 
-var testCardScores = map[Card]int{
+var testCardScores = map[CardName]int{
 	"Black Lotus": 2,
 	"Storm Crow":  100}
 

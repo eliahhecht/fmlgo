@@ -64,11 +64,11 @@ func outputScores(scores OverallResult) {
 }
 
 type sortedScoreMap struct {
-	m    map[Card]int
-	keys []Card
+	m    map[CardName]int
+	keys []CardName
 }
 
-func newSortedScoreMap(cardScores map[Card]int) sortedScoreMap {
+func newSortedScoreMap(cardScores map[CardName]int) sortedScoreMap {
 	sorted := sortedScoreMap{m: cardScores}
 	for key := range cardScores {
 		sorted.keys = append(sorted.keys, key)
@@ -94,7 +94,7 @@ func (sm *sortedScoreMap) Swap(i, j int) {
 	sm.keys[i], sm.keys[j] = sm.keys[j], sm.keys[i]
 }
 
-func printCardScores(w io.Writer, cardScores map[Card]int, max int) {
+func printCardScores(w io.Writer, cardScores map[CardName]int, max int) {
 	sortable := newSortedScoreMap(cardScores)
 	sort.Sort(sort.Reverse(&sortable))
 
@@ -127,7 +127,7 @@ func buildPlayers() []Player {
 func buildCards(cardNames []string) []Card {
 	var cards = make([]Card, 0)
 	for _, cardName := range cardNames {
-		cards = append(cards, Card(cardName))
+		cards = append(cards, Card{Name: CardName(cardName)})
 	}
 	return cards
 }
