@@ -53,7 +53,7 @@ func outputScores(scores OverallResult) {
 		fmt.Fprintf(w, "== %s: \t%d ==\n", playerName, score.Total())
 		printCardScores(w, score.CardScores, math.MaxInt32)
 		fmt.Fprintln(w, "  Sideboard:")
-		printCardScores(w, score.SideboardScores, math.MaxInt32)
+		printCardScores(w, score.BenchScores, math.MaxInt32)
 		fmt.Fprintln(w, "\t")
 	}
 
@@ -117,8 +117,8 @@ func buildPlayers() []Player {
 	var players []Player
 	for k, v := range playersMap {
 		mainDeck := buildCards(v["main"])
-		sideboard := buildCards(v["sideboard"])
-		player := Player{Name: k, Cards: mainDeck, Sideboard: sideboard}
+		bench := buildCards(v["bench"])
+		player := Player{Name: k, Cards: mainDeck, Bench: bench}
 		players = append(players, player)
 	}
 	return players

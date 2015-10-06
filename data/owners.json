@@ -12,7 +12,7 @@
             "Anafenza, the Foremost",
             "Llanowar Wastes"
         ],
-        "sideboard":
+        "bench":
         [
             "Prairie Stream",
             "Scalding Tarn"
@@ -31,7 +31,7 @@
             "Canopy Vista",
             "Windswept Heath"
         ],
-        "sideboard":
+        "bench":
         [
             "Cinder Glade",
             "Smoldering Marsh"
@@ -50,7 +50,7 @@
             "Sandsteppe Citadel",
             "Bloodstained Mire"
         ],
-        "sideboard":
+        "bench":
         [
             "Dispel",
             "Gurmag Angler"
@@ -69,7 +69,7 @@
             "Undergrowth Champion",
             "Wooded Foothills"
         ],
-        "sideboard":
+        "bench":
         [
             "Disdainful Stroke",
             "Shambling Vent"
@@ -88,7 +88,7 @@
             "Sunken Hollow",
             "Flooded Strand"
         ],
-        "sideboard":
+        "bench":
         [
             "Wingmate Roc",
             "Mantis Rider"
@@ -107,7 +107,7 @@
             "Abbot of Keral Keep",
             "Polluted Delta"
         ],
-        "sideboard":
+        "bench":
         [
             "Soulfire Grand Master",
             "Kologhan's Command"

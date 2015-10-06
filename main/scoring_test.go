@@ -7,9 +7,9 @@ import (
 )
 
 var testPlayer = Player{
-	Name:      "Test Player",
-	Cards:     makeCards("Black Lotus"),
-	Sideboard: makeCards("Storm Crow")}
+	Name:  "Test Player",
+	Cards: makeCards("Black Lotus"),
+	Bench: makeCards("Storm Crow")}
 
 var testCardScores = map[CardName]int{
 	"Black Lotus": 2,
@@ -39,8 +39,8 @@ func TestScoringForUnownedCardsDoesNotIncludeOwnedCards(t *testing.T) {
 	assert.Equal(t, 0, score.UnownedCardScores["Black Lotus"])
 }
 
-func TestScoringForSideboardCards(t *testing.T) {
+func TestScoringForBenchCards(t *testing.T) {
 	score := invokeCalculateScore().PlayerScores["Test Player"]
 
-	assert.Equal(t, 100, score.SideboardScores["Storm Crow"])
+	assert.Equal(t, 100, score.BenchScores["Storm Crow"])
 }

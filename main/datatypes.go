@@ -20,7 +20,7 @@ type Set struct {
 
 // Player represents an FML player
 type Player struct {
-	Name      string
-	Cards     []Card
-	Sideboard []Card
+	Name  string
+	Cards []Card
+	Bench []Card
 }

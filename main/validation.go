@@ -4,7 +4,7 @@ import "fmt"
 
 func confirmCardsAreLegal(players []Player, legalCards []Card) {
 	for _, player := range players {
-		for _, card := range player.Cards {
+		for _, card := range append(player.Cards, player.Bench...) {
 			if !cardIsLegal(legalCards, card) {
 				panic(fmt.Sprintf("%s's card %s not found in any legal set (%v legal cards)",
 					player.Name, card, len(legalCards)))

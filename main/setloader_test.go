@@ -33,4 +33,7 @@ func TestLoadSetsLoadsCardTypes(t *testing.T) {
 	hangarbackWalker := *findCard("Hangarback Walker")
 
 	assert.Contains(t, hangarbackWalker.Types, CardType("Artifact"))
+	assert.Contains(t, hangarbackWalker.Types, CardType("Creature"))
 }
+
+//ehtodo test types for DFC
