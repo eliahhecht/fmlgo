@@ -17,7 +17,7 @@ func main() {
 	parseFlags()
 	flag.Parse()
 
-	legalCards := loadCards([]string{"KTK", "FRF", "DTK", "ORI", "BFZ"})
+	legalCards := loadCards([]string{"KTK", "FRF", "DTK", "ORI", "BFZ", "EXP"})
 
 	players := buildPlayers()
 
