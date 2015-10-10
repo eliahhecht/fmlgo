@@ -124,10 +124,10 @@ func buildPlayers() []Player {
 	return players
 }
 
-func buildCards(cardNames []string) []Card {
-	var cards = make([]Card, 0)
+func buildCards(cardNames []string) []*Card {
+	var cards = make([]*Card, 0)
 	for _, cardName := range cardNames {
-		cards = append(cards, Card{Name: CardName(cardName)})
+		cards = append(cards, &Card{Name: CardName(cardName)})
 	}
 	return cards
 }

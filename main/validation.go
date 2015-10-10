@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func confirmCardsAreLegal(players []Player, legalCards []Card) {
+func confirmCardsAreLegal(players []Player, legalCards []*Card) {
 	for _, player := range players {
 		for _, card := range append(player.Cards, player.Bench...) {
 			if !cardIsLegal(legalCards, card) {
@@ -13,7 +13,7 @@ func confirmCardsAreLegal(players []Player, legalCards []Card) {
 	}
 }
 
-func cardIsLegal(legalCards []Card, card Card) bool {
+func cardIsLegal(legalCards []*Card, card *Card) bool {
 	for _, legalCard := range legalCards {
 		if card.Name == legalCard.Name {
 			return true

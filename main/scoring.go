@@ -62,7 +62,7 @@ func scorePlayer(player Player, cardScores map[CardName]int, unownedCards map[Ca
 func transferScores(
 	destinationMap map[CardName]int,
 	sourceMap map[CardName]int,
-	cards []Card,
+	cards []*Card,
 	unownedCards map[CardName]int) {
 	for _, card := range cards {
 		destinationMap[card.Name] = sourceMap[card.Name]

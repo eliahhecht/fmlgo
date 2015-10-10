@@ -20,14 +20,14 @@ func TestDecklistParsesCorrectCards(t *testing.T) {
 
 	assert.Len(t, cards, 75)
 
-	assertContains(t, cards, Card{Name: "Llanowar Wastes"}, 1)
-	assertContains(t, cards, Card{Name: "Black Lotus"}, 2)
-	assertContains(t, cards, Card{Name: "Swamp"}, 57)
-	assertContains(t, cards, Card{Name: "Ancestral Recall"}, 3)
-	assertContains(t, cards, Card{Name: "Plains"}, 12)
+	assertContains(t, cards, &Card{Name: "Llanowar Wastes"}, 1)
+	assertContains(t, cards, &Card{Name: "Black Lotus"}, 2)
+	assertContains(t, cards, &Card{Name: "Swamp"}, 57)
+	assertContains(t, cards, &Card{Name: "Ancestral Recall"}, 3)
+	assertContains(t, cards, &Card{Name: "Plains"}, 12)
 }
 
-func assertContains(t *testing.T, haystack []Card, needle Card, expectedNumber int) {
+func assertContains(t *testing.T, haystack []*Card, needle *Card, expectedNumber int) {
 	numberFound := 0
 	for _, card := range haystack {
 		if card.Name == needle.Name {

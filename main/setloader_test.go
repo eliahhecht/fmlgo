@@ -16,7 +16,7 @@ func TestLoadSetsDoesNotIncludeBasicLands(t *testing.T) {
 func findCard(needle CardName) *Card {
 	for _, card := range cards {
 		if card.Name == needle {
-			return &card
+			return card
 		}
 	}
 	return nil
@@ -32,8 +32,13 @@ func TestLoadCardsContainsCorrectCards(t *testing.T) {
 func TestLoadSetsLoadsCardTypes(t *testing.T) {
 	hangarbackWalker := *findCard("Hangarback Walker")
 
-	assert.Contains(t, hangarbackWalker.Types, CardType("Artifact"))
-	assert.Contains(t, hangarbackWalker.Types, CardType("Creature"))
+	assert.Contains(t, hangarbackWalker.Types.ToSlice(), CardType("Artifact"))
+	assert.Contains(t, hangarbackWalker.Types.ToSlice(), CardType("Creature"))
 }
 
-//ehtodo test types for DFC
+func TestLoadSetsLoadsAllTypesForDoubleFacedCard(t *testing.T) {
+	jace := *findCard("Jace, Vryn's Prodigy")
+
+	assert.Contains(t, jace.Types.ToSlice(), CardType("Planeswalker"))
+	assert.Contains(t, jace.Types.ToSlice(), CardType("Creature"))
+}

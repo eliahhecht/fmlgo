@@ -1,5 +1,7 @@
 package main
 
+import "github.com/deckarep/golang-set"
+
 // A CardType is a Magic card type (Artifact, Creature, etc)
 type CardType string
 
@@ -8,19 +10,20 @@ type CardName string
 
 // A Card represents a Magic card
 type Card struct {
-	Name  CardName
-	Types []CardType
+	Name      CardName
+	Types     mapset.Set
+	OtherSide CardName
 }
 
 // A Set is a slice of cards plus a set code
 type Set struct {
 	Code  string
-	Cards []Card
+	Cards []*Card
 }
 
 // Player represents an FML player
 type Player struct {
 	Name  string
-	Cards []Card
-	Bench []Card
+	Cards []*Card
+	Bench []*Card
 }

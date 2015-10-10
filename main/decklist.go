@@ -8,7 +8,7 @@ import (
 
 // Decklist represents a decklist, containing a set of cards
 type Decklist struct {
-	Cards []Card
+	Cards []*Card
 }
 
 var cardLineRegex = regexp.MustCompile(`(\d+) (.*)`)
@@ -29,9 +29,9 @@ func (l decklistLoader) loadDecklist(path string) Decklist {
 	return Decklist{cards}
 }
 
-func parseDecklist(decklist string) []Card {
+func parseDecklist(decklist string) []*Card {
 	lines := strings.Split(decklist, "\n")
-	allCards := []Card{}
+	allCards := []*Card{}
 	for _, line := range lines {
 		newCards, ok := parseLine(line)
 		if ok {
@@ -41,7 +41,7 @@ func parseDecklist(decklist string) []Card {
 	return allCards
 }
 
-func parseLine(line string) (cards []Card, ok bool) {
+func parseLine(line string) (cards []*Card, ok bool) {
 	trimmed := strings.TrimSpace(line)
 	matches := cardLineRegex.FindStringSubmatch(trimmed)
 
@@ -52,7 +52,7 @@ func parseLine(line string) (cards []Card, ok bool) {
 		}
 
 		//ehtodo this card won't have its types -- problem?
-		card := Card{Name: CardName(matches[2])}
+		card := &Card{Name: CardName(matches[2])}
 		cards := repeatCard(card, numberOfCard)
 
 		return cards, true
@@ -60,8 +60,8 @@ func parseLine(line string) (cards []Card, ok bool) {
 	return nil, false
 }
 
-func repeatCard(card Card, numberOfCard int) []Card {
-	cards := make([]Card, numberOfCard)
+func repeatCard(card *Card, numberOfCard int) []*Card {
+	cards := make([]*Card, numberOfCard)
 	for i := 0; i < numberOfCard; i++ {
 		cards[i] = card
 	}
