@@ -14,3 +14,29 @@ func TestCardScorer_ScoresCardCorrectly(t *testing.T) {
 
 	assert.Equal(t, 2, legalCards.GetCard("Black Lotus").Score)
 }
+
+
+var testPlayer = &Player{
+	Name:  "Test Player",
+	Cards: makeCards("Black Lotus"),
+	Bench: makeCards("Storm Crow")}
+
+var testCardCollection = makeCardCollection("Black Lotus", "Plains", "Storm Crow")
+
+func TestTaggingCardsToOwners(t *testing.T) {
+	invokeTagOwners()
+
+	blackLotus := testCardCollection.GetCard("Black Lotus")
+	assert.Equal(t, testPlayer.Name, blackLotus.Ownership.Owner)
+}
+
+func invokeTagOwners() {
+	TagOwners([]*Player{testPlayer}, testCardCollection)
+}
+
+func TestTaggingCardsThatAreNotOwned(t *testing.T) {
+	invokeTagOwners()
+
+	plains := testCardCollection.GetCard("Plains")
+	assert.False(t, plains.IsOwned())
+}

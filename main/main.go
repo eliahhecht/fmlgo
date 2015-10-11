@@ -25,7 +25,7 @@ func main() {
 	loadDecklists()
 	ScoreCards(decklists, legalCards)
 
-	calculateScore(players, legalCards)
+	TagOwners(players, legalCards)
 
 	outputScores(players, legalCards)
 }
