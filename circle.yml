@@ -1,2 +1,5 @@
 general:
-          build_dir: api
+  build_dir: main
+#test:
+#  override:
+#    - go test -v
