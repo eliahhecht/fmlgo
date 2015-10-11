@@ -15,12 +15,13 @@ func ScoreCards(decklists []Decklist, legalCards *CardCollection) {
 // TagOwners associates each card with the player who owns it
 func TagOwners(players []*Player, cards *CardCollection) {
 	for _, player := range players {
-		for _, card := range player.Cards {
-			cards.GetCard(card.Name).Ownership = OwnershipTag{Owner: player.Name, OnBench: false}
-		}
-		for _, card := range player.Bench {
-			cards.GetCard(card.Name).Ownership = OwnershipTag{Owner: player.Name, OnBench: true}
-		}
+		tagCards(player, player.Cards, false)
+		tagCards(player, player.Bench, true)
 	}
+}
 
+func tagCards(player *Player, cardsToTag []*Card, onBench bool) {
+	for _, card := range cardsToTag {
+		card.Ownership = OwnershipTag{Owner: player.Name, OnBench: onBench}
+	}
 }

@@ -15,12 +15,12 @@ func TestCardScorer_ScoresCardCorrectly(t *testing.T) {
 	assert.Equal(t, 2, legalCards.GetCard("Black Lotus").Score)
 }
 
+var testCardCollection = makeCardCollection("Black Lotus", "Plains", "Storm Crow")
+
 var testPlayer = &Player{
 	Name:  "Test Player",
-	Cards: makeCards("Black Lotus"),
-	Bench: makeCards("Storm Crow")}
-
-var testCardCollection = makeCardCollection("Black Lotus", "Plains", "Storm Crow")
+	Cards: []*Card{testCardCollection.GetCard("Black Lotus")},
+	Bench: []*Card{testCardCollection.GetCard("Storm Crow")}}
 
 func TestTaggingCardsToOwners(t *testing.T) {
 	invokeTagOwners()
