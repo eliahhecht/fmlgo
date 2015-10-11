@@ -66,7 +66,6 @@ func loadDecklists() {
 }
 
 func loadDecklist(path string, f os.FileInfo, err error) error {
-	fmt.Println("Loading ", path)
 	if !f.IsDir() {
 		loader := newDecklistLoader()
 		decklist := loader.loadDecklist(path)
