@@ -5,7 +5,7 @@ import "github.com/deckarep/golang-set"
 // A CardType is a Magic card type (Artifact, Creature, etc)
 type CardType string
 
-var AllCardTypes []CardType = []CardType {
+var AllCardTypes []CardType = []CardType{
 	"Artifact", "Creature", "Enchantment", "Land", "Planeswalker", "Instant", "Sorcery"}
 
 // A CardName is the name of a Magic card, and uniquely determines that card for FML purposes
@@ -20,11 +20,11 @@ type Card struct {
 	Types     mapset.Set
 	OtherSide CardName
 	Score     int
-	Ownership  OwnershipTag
+	Ownership OwnershipTag
 }
 
 type OwnershipTag struct {
-	Owner PlayerName
+	Owner   PlayerName
 	OnBench bool
 }
 
@@ -44,7 +44,6 @@ func (c *CardCollection) Contains(name CardName) bool {
 func (c *CardCollection) GetCard(name CardName) *Card {
 	return c.CardsByName[name]
 }
-
 
 func (c *CardCollection) GetCardsOfType(cardType CardType) []*Card {
 	var results []*Card

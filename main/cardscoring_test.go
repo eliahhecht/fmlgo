@@ -15,7 +15,6 @@ func TestCardScorer_ScoresCardCorrectly(t *testing.T) {
 	assert.Equal(t, 2, legalCards.GetCard("Black Lotus").Score)
 }
 
-
 var testPlayer = &Player{
 	Name:  "Test Player",
 	Cards: makeCards("Black Lotus"),
