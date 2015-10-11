@@ -8,12 +8,25 @@ type CardType string
 // A CardName is the name of a Magic card, and uniquely determines that card for FML purposes
 type CardName string
 
+// A PlayerName is the name of a FML player
+type PlayerName string
+
 // A Card represents a Magic card
 type Card struct {
 	Name      CardName
 	Types     mapset.Set
 	OtherSide CardName
 	Score     int
+	Ownership  OwnershipTag
+}
+
+type OwnershipTag struct {
+	Owner PlayerName
+	OnBench bool
+}
+
+func (c Card) IsOwned() bool {
+	return c.Ownership.Owner != ""
 }
 
 type CardCollection struct {
@@ -37,7 +50,7 @@ type Set struct {
 
 // Player represents an FML player
 type Player struct {
-	Name  string
+	Name  PlayerName
 	Cards []*Card
 	Bench []*Card
 }

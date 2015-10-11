@@ -43,11 +43,10 @@ func outputScores(scores OverallResult) {
 	w := new(tabwriter.Writer)
 	w.Init(os.Stdout, 0, 8, 0, '\t', 0)
 
-	var playerNames []string
+	var playerNames []PlayerName
 	for playerName := range scores.PlayerScores {
 		playerNames = append(playerNames, playerName)
 	}
-	sort.Strings(playerNames)
 	for _, playerName := range playerNames {
 		score := scores.PlayerScores[playerName]
 		fmt.Fprintf(w, "== %s: \t%d ==\n", playerName, score.Total())
@@ -118,7 +117,7 @@ func buildPlayers() []Player {
 	for k, v := range playersMap {
 		mainDeck := buildCards(v["main"])
 		bench := buildCards(v["bench"])
-		player := Player{Name: k, Cards: mainDeck, Bench: bench}
+		player := Player{Name: PlayerName(k), Cards: mainDeck, Bench: bench}
 		players = append(players, player)
 	}
 	return players

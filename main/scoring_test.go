@@ -13,7 +13,9 @@ var testPlayer = Player{
 
 var testCardScores = &CardCollection{map[CardName]*Card{
 	"Black Lotus": &Card{Score: 2},
-	"Storm Crow":  &Card{Score: 100}}}
+	"Storm Crow":  &Card{Score: 100},
+	"Plains": &Card{Score: 42}}}
+
 
 func TestScoringForSimpleCase(t *testing.T) {
 	score := invokeCalculateScore().PlayerScores["Test Player"]
@@ -45,7 +47,16 @@ func TestScoringForBenchCards(t *testing.T) {
 	assert.Equal(t, 100, score.BenchScores["Storm Crow"])
 }
 
-func TestScoringByCardType(t *testing.T) {
-	//	score := invokeCalculateScore()
-	//	landScores := score.GetScoresForType(CardType("Land"))
+func TestTaggingCardsToOwners(t *testing.T) {
+	invokeCalculateScore()
+
+	blackLotus := testCardScores.GetCard("Black Lotus")
+	assert.Equal(t, testPlayer.Name, blackLotus.Ownership.Owner)
+}
+
+func TestTaggingCardsThatAreNotOwned(t *testing.T) {
+	invokeCalculateScore()
+
+	plains := testCardScores.GetCard("Plains")
+	assert.False(t, plains.IsOwned())
 }
