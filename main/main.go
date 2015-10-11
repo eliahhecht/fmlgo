@@ -44,18 +44,18 @@ func outputScores(players []*Player, allCards *CardCollection) {
 
 	for _, player := range players {
 		fmt.Fprintf(w, "== %s: \t%d ==\n", player.Name, player.TotalScore())
-		printAllCardScores(w, player.Cards)
-		fmt.Fprintln(w, "  Bench:")
-		printAllCardScores(w, player.Bench)
+		printCardScoresForPlayer(w, player.Cards)
+		fmt.Fprintln(w, "  Bench: \t")
+		printCardScoresForPlayer(w, player.Bench)
 		fmt.Fprintln(w, "\t")
 	}
 
-	fmt.Fprintln(w, "Card scores by type: ")
+	fmt.Fprintln(w, "Card scores by type: \t\t")
 
 	for _, cardType := range AllCardTypes {
-		fmt.Fprintf(w, "\n%s:\n", cardType)
+		fmt.Fprintf(w, "\t\t\t\n%s: \t\t\n", cardType)
 		cardsForType := allCards.GetCardsOfType(cardType)
-		printCardScores(w, cardsForType, 10)
+		printCardScoresForType(w, cardsForType)
 	}
 
 	w.Flush()
@@ -76,16 +76,37 @@ func (bs ByScore) Swap(i, j int) {
 	bs[i], bs[j] = bs[j], bs[i]
 }
 
-func printAllCardScores(w io.Writer, cards []*Card) {
-	printCardScores(w, cards, 10000)
+func printCardScoresForPlayer(w io.Writer, cards []*Card) {
+	printCardScores(w, cards, 10000, false)
 }
 
-func printCardScores(w io.Writer, cards []*Card, max int) {
+func printCardScoresForType(w io.Writer, cards []*Card) {
+	printCardScores(w, cards, 15, true)
+}
+
+func printCardScores(w io.Writer, cards []*Card, max int, includeOwner bool) {
 	cardsByScore := ByScore(cards)
 	sort.Sort(sort.Reverse(&cardsByScore))
 
 	for i, card := range cardsByScore {
-		fmt.Fprintf(w, "   %v \t%d\n", card.Name, card.Score)
+		if (includeOwner) {
+			owner := ""
+			bench := ""
+			if (card.Ownership.OnBench) {
+				bench = (" (Bench)")
+			}
+			if (card.Ownership.Owner != "") {
+				owner = string(card.Ownership.Owner)
+			}
+
+			if (owner == "" && card.Score == 0) {
+				continue
+			}
+
+			fmt.Fprintf(w, "   %v \t%d\t%v%v\n", card.Name, card.Score, owner, bench)
+		} else {
+			fmt.Fprintf(w, "   %v \t%d\n", card.Name, card.Score)
+		}
 
 		if i >= max {
 			break

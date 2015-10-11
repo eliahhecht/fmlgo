@@ -38,7 +38,6 @@ func (sr ScoreResult) Total() int {
 func calculateScore(players []*Player, cards *CardCollection) OverallResult {
 	result := newOverallResult()
 	tagOwners(players, cards)
-	//	result.UnownedCardScores = unownedCards
 
 	return result
 }
@@ -48,7 +47,7 @@ func tagOwners(players []*Player, cards *CardCollection) {
 		for _, card := range player.Cards {
 			cards.GetCard(card.Name).Ownership = OwnershipTag{Owner: player.Name, OnBench: false}
 		}
-		for _, card := range player.Cards {
+		for _, card := range player.Bench {
 			cards.GetCard(card.Name).Ownership = OwnershipTag{Owner: player.Name, OnBench: true}
 		}
 	}

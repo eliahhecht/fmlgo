@@ -6,7 +6,7 @@ import "github.com/deckarep/golang-set"
 type CardType string
 
 var AllCardTypes []CardType = []CardType {
-	"Artifact", "Creature", "Enchantment", "Instant", "Land", "Planeswalker", "Sorcery"}
+	"Artifact", "Creature", "Enchantment", "Land", "Planeswalker", "Instant", "Sorcery"}
 
 // A CardName is the name of a Magic card, and uniquely determines that card for FML purposes
 type CardName string
