@@ -13,7 +13,20 @@ type Card struct {
 	Name      CardName
 	Types     mapset.Set
 	OtherSide CardName
-	Score int
+	Score     int
+}
+
+type CardCollection struct {
+	CardsByName map[CardName]*Card
+}
+
+func (c *CardCollection) Contains(name CardName) bool {
+	_, ok := c.CardsByName[name]
+	return ok
+}
+
+func (c *CardCollection) GetCard(name CardName) *Card {
+	return c.CardsByName[name]
 }
 
 // A Set is a slice of cards plus a set code

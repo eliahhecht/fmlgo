@@ -7,3 +7,12 @@ func makeCards(names ...string) []*Card {
 	}
 	return cards
 }
+
+func makeCardCollection(names ...string) *CardCollection {
+	cards := makeCards(names...)
+	collection := CardCollection{make(map[CardName]*Card)}
+	for _, card := range cards {
+		collection.CardsByName[card.Name] = card
+	}
+	return &collection
+}

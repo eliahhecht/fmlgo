@@ -19,15 +19,17 @@ type setDto struct {
 
 const cardDataFile string = "../data/AllSets.json"
 
-func loadCards(setNames []string) []*Card {
+func loadCards(setNames []string) *CardCollection {
 	sets := loadAllSets()
 
-	var cards []*Card
+	cards := make(map[CardName]*Card)
 	for _, setName := range setNames {
 		set := sets[setName]
-		cards = append(cards, set.Cards...)
+		for _, card := range set.Cards {
+			cards[card.Name] = card
+		}
 	}
-	return cards
+	return &CardCollection{cards}
 }
 
 func loadAllSets() map[string]Set {

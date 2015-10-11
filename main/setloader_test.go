@@ -9,35 +9,26 @@ import (
 var cards = loadCards([]string{"ORI", "BFZ"})
 
 func TestLoadSetsDoesNotIncludeBasicLands(t *testing.T) {
-	card := findCard("Swamp")
+	card := cards.GetCard("Swamp")
 	assert.Nil(t, card)
 }
 
-func findCard(needle CardName) *Card {
-	for _, card := range cards {
-		if card.Name == needle {
-			return card
-		}
-	}
-	return nil
-}
-
 func TestLoadCardsContainsCorrectCards(t *testing.T) {
-	yavimayaCoast := findCard("Yavimaya Coast")
+	yavimayaCoast := cards.GetCard("Yavimaya Coast")
 	assert.NotNil(t, yavimayaCoast)
-	transgress := findCard("Transgress the Mind")
+	transgress := cards.GetCard("Transgress the Mind")
 	assert.NotNil(t, transgress)
 }
 
 func TestLoadSetsLoadsCardTypes(t *testing.T) {
-	hangarbackWalker := *findCard("Hangarback Walker")
+	hangarbackWalker := *cards.GetCard("Hangarback Walker")
 
 	assert.Contains(t, hangarbackWalker.Types.ToSlice(), CardType("Artifact"))
 	assert.Contains(t, hangarbackWalker.Types.ToSlice(), CardType("Creature"))
 }
 
 func TestLoadSetsLoadsAllTypesForDoubleFacedCard(t *testing.T) {
-	jace := *findCard("Jace, Vryn's Prodigy")
+	jace := *cards.GetCard("Jace, Vryn's Prodigy")
 
 	assert.Contains(t, jace.Types.ToSlice(), CardType("Planeswalker"))
 	assert.Contains(t, jace.Types.ToSlice(), CardType("Creature"))

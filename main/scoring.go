@@ -35,46 +35,36 @@ func (sr ScoreResult) Total() int {
 	return total
 }
 
-func calculateScore(players []Player, cards []*Card) OverallResult {
+func calculateScore(players []Player, cards *CardCollection) OverallResult {
 	result := newOverallResult()
-	unownedCards := copy(cards)
 	tagOwners(players, cards)
-	result.UnownedCardScores = unownedCards
+	//	result.UnownedCardScores = unownedCards
 
 	for _, player := range players {
-		result.PlayerScores[player.Name] = scorePlayer(player, cardScores, unownedCards)
+		result.PlayerScores[player.Name] = scorePlayer(player, cards)
 	}
 
 	return result
 }
 
-func tagOwners(players []Player, cards []*Card) {
+func tagOwners(players []Player, cards *CardCollection) {
 
 }
 
-func copy(m map[CardName]int) map[CardName]int {
-	copy := make(map[CardName]int)
-	for k, v := range m {
-		copy[k] = v
-	}
-	return copy
-}
-
-func scorePlayer(player Player, cardScores map[CardName]int, unownedCards map[CardName]int) ScoreResult {
+func scorePlayer(player Player, cardScores *CardCollection) ScoreResult {
 	playerResult := newScoreResult()
-	transferScores(playerResult.CardScores, cardScores, player.Cards, unownedCards)
-	transferScores(playerResult.BenchScores, cardScores, player.Bench, unownedCards)
+
+	transferScores(playerResult.CardScores, cardScores, player.Cards)
+	transferScores(playerResult.BenchScores, cardScores, player.Bench)
 
 	return playerResult
 }
 
 func transferScores(
 	destinationMap map[CardName]int,
-	sourceMap map[CardName]int,
-	cards []*Card,
-	unownedCards map[CardName]int) {
-	for _, card := range cards {
-		destinationMap[card.Name] = sourceMap[card.Name]
-		unownedCards[card.Name] = 0
+	allCards *CardCollection,
+	cardsToTransfer []*Card) {
+	for _, card := range cardsToTransfer {
+		destinationMap[card.Name] = allCards.GetCard(card.Name).Score
 	}
 }

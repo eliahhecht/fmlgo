@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var testLegalCards = makeCards("Black Lotus", "Ancestral Recall")
+var testLegalCards = makeCardCollection("Black Lotus", "Ancestral Recall")
 
 func TestValidationForLegalCard(t *testing.T) {
 	testPlayer := Player{Cards: makeCards("Black Lotus")}
