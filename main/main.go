@@ -4,6 +4,7 @@ import (
 	"flag"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 var decklistDir string
@@ -65,10 +66,17 @@ func loadDecklists() {
 }
 
 func loadDecklist(path string, f os.FileInfo, err error) error {
-	if !f.IsDir() {
+	if looksLikeDecklist(path, f) {
 		loader := newDecklistLoader()
 		decklist := loader.loadDecklist(path)
 		decklists = append(decklists, decklist)
 	}
 	return nil
+}
+
+func looksLikeDecklist(path string, f os.FileInfo) bool {
+	if f.IsDir() {
+		return false
+	}
+	return strings.HasSuffix(path, ".txt")
 }
