@@ -4,7 +4,6 @@ import (
 	"flag"
 	"fmt"
 	"io"
-	"math"
 	"os"
 	"path/filepath"
 	"sort"
@@ -19,16 +18,16 @@ func main() {
 
 	legalCards := loadCards([]string{"KTK", "FRF", "DTK", "ORI", "BFZ", "EXP"})
 
-	players := buildPlayers()
+	players := buildPlayers(legalCards)
 
 	confirmCardsAreLegal(players, legalCards)
 
 	loadDecklists()
 	ScoreCards(decklists, legalCards)
 
-	scores := calculateScore(players, legalCards)
+	calculateScore(players, legalCards)
 
-	outputScores(scores)
+	outputScores(players, legalCards)
 }
 
 func parseFlags() {
@@ -39,67 +38,54 @@ func parseFlags() {
 	decklistDir = flag.Arg(0)
 }
 
-func outputScores(scores OverallResult) {
+func outputScores(players []*Player, allCards *CardCollection) {
 	w := new(tabwriter.Writer)
 	w.Init(os.Stdout, 0, 8, 0, '\t', 0)
 
-	var playerNames []PlayerName
-	for playerName := range scores.PlayerScores {
-		playerNames = append(playerNames, playerName)
-	}
-	for _, playerName := range playerNames {
-		score := scores.PlayerScores[playerName]
-		fmt.Fprintf(w, "== %s: \t%d ==\n", playerName, score.Total())
-		printCardScores(w, score.CardScores, math.MaxInt32)
-		fmt.Fprintln(w, "  Sideboard:")
-		printCardScores(w, score.BenchScores, math.MaxInt32)
+	for _, player := range players {
+		fmt.Fprintf(w, "== %s: \t%d ==\n", player.Name, player.TotalScore())
+		printAllCardScores(w, player.Cards)
+		fmt.Fprintln(w, "  Bench:")
+		printAllCardScores(w, player.Bench)
 		fmt.Fprintln(w, "\t")
 	}
 
-	fmt.Fprintln(w, "Highest-scoring unfielded cards: ")
-	printCardScores(w, scores.UnownedCardScores, 50)
+	fmt.Fprintln(w, "Card scores by type: ")
+
+	for _, cardType := range AllCardTypes {
+		fmt.Fprintf(w, "\n%s:\n", cardType)
+		cardsForType := allCards.GetCardsOfType(cardType)
+		printCardScores(w, cardsForType, 10)
+	}
 
 	w.Flush()
 }
 
-type sortedScoreMap struct {
-	m    map[CardName]int
-	keys []CardName
+
+type ByScore []*Card
+
+func (bs ByScore) Len() int {
+	return len(bs)
 }
 
-func newSortedScoreMap(cardScores map[CardName]int) sortedScoreMap {
-	sorted := sortedScoreMap{m: cardScores}
-	for key := range cardScores {
-		sorted.keys = append(sorted.keys, key)
-	}
-	return sorted
+func (bs ByScore) Less(i, j int) bool {
+	return bs[i].Score < bs[j].Score
 }
 
-func (sm *sortedScoreMap) Len() int {
-	return len(sm.keys)
+func (bs ByScore) Swap(i, j int) {
+	bs[i], bs[j] = bs[j], bs[i]
 }
 
-func (sm *sortedScoreMap) Less(i, j int) bool {
-	iVal := sm.m[sm.keys[i]]
-	jVal := sm.m[sm.keys[j]]
-
-	if iVal == jVal {
-		return sm.keys[i] < sm.keys[j]
-	}
-	return iVal < jVal
+func printAllCardScores(w io.Writer, cards []*Card) {
+	printCardScores(w, cards, 10000)
 }
 
-func (sm *sortedScoreMap) Swap(i, j int) {
-	sm.keys[i], sm.keys[j] = sm.keys[j], sm.keys[i]
-}
+func printCardScores(w io.Writer, cards []*Card, max int) {
+	cardsByScore := ByScore(cards)
+	sort.Sort(sort.Reverse(&cardsByScore))
 
-func printCardScores(w io.Writer, cardScores map[CardName]int, max int) {
-	sortable := newSortedScoreMap(cardScores)
-	sort.Sort(sort.Reverse(&sortable))
-
-	for i, cardName := range sortable.keys {
-		cardScore := sortable.m[cardName]
-		fmt.Fprintf(w, "   %v \t%d\n", cardName, cardScore)
+	for i, card := range cardsByScore {
+		fmt.Fprintf(w, "   %v \t%d\n", card.Name, card.Score)
 
 		if i >= max {
 			break
@@ -109,24 +95,25 @@ func printCardScores(w io.Writer, cardScores map[CardName]int, max int) {
 
 const cardOwnersFile string = "../data/owners.json"
 
-func buildPlayers() []Player {
+func buildPlayers(allCards *CardCollection) []*Player {
 	var playersMap map[string]map[string][]string
 	readJSONFile(cardOwnersFile, &playersMap)
 
-	var players []Player
+	var players []*Player
 	for k, v := range playersMap {
-		mainDeck := buildCards(v["main"])
-		bench := buildCards(v["bench"])
+		mainDeck := buildCards(v["main"], allCards)
+		bench := buildCards(v["bench"], allCards)
 		player := Player{Name: PlayerName(k), Cards: mainDeck, Bench: bench}
-		players = append(players, player)
+		players = append(players, &player)
 	}
 	return players
 }
 
-func buildCards(cardNames []string) []*Card {
+func buildCards(cardNames []string, allCards *CardCollection) []*Card {
 	var cards = make([]*Card, 0)
 	for _, cardName := range cardNames {
-		cards = append(cards, &Card{Name: CardName(cardName)})
+		card := allCards.GetCard(CardName(cardName))
+		cards = append(cards, card)
 	}
 	return cards
 }

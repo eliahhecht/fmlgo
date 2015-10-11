@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func confirmCardsAreLegal(players []Player, legalCards *CardCollection) {
+func confirmCardsAreLegal(players []*Player, legalCards *CardCollection) {
 	for _, player := range players {
 		for _, card := range append(player.Cards, player.Bench...) {
 			if !legalCards.Contains(card.Name) {

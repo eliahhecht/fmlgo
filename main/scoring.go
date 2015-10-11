@@ -35,19 +35,15 @@ func (sr ScoreResult) Total() int {
 	return total
 }
 
-func calculateScore(players []Player, cards *CardCollection) OverallResult {
+func calculateScore(players []*Player, cards *CardCollection) OverallResult {
 	result := newOverallResult()
 	tagOwners(players, cards)
 	//	result.UnownedCardScores = unownedCards
 
-	for _, player := range players {
-		result.PlayerScores[player.Name] = scorePlayer(player, cards)
-	}
-
 	return result
 }
 
-func tagOwners(players []Player, cards *CardCollection) {
+func tagOwners(players []*Player, cards *CardCollection) {
 	for _, player := range players {
 		for _, card := range player.Cards {
 			cards.GetCard(card.Name).Ownership = OwnershipTag{Owner: player.Name, OnBench: false}
@@ -59,20 +55,3 @@ func tagOwners(players []Player, cards *CardCollection) {
 
 }
 
-func scorePlayer(player Player, cardScores *CardCollection) ScoreResult {
-	playerResult := newScoreResult()
-
-	transferScores(playerResult.CardScores, cardScores, player.Cards)
-	transferScores(playerResult.BenchScores, cardScores, player.Bench)
-
-	return playerResult
-}
-
-func transferScores(
-	destinationMap map[CardName]int,
-	allCards *CardCollection,
-	cardsToTransfer []*Card) {
-	for _, card := range cardsToTransfer {
-		destinationMap[card.Name] = allCards.GetCard(card.Name).Score
-	}
-}

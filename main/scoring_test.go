@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var testPlayer = Player{
+var testPlayer = &Player{
 	Name:  "Test Player",
 	Cards: makeCards("Black Lotus"),
 	Bench: makeCards("Storm Crow")}
@@ -24,7 +24,7 @@ func TestScoringForSimpleCase(t *testing.T) {
 }
 
 func invokeCalculateScore() OverallResult {
-	return calculateScore([]Player{testPlayer}, testCardScores)
+	return calculateScore([]*Player{testPlayer}, testCardScores)
 }
 
 func TestScoringForUnownedCards(t *testing.T) {
