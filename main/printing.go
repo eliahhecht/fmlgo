@@ -62,15 +62,13 @@ func printCardScoreWithOwner(w io.Writer, card *Card) {
 	if card.Ownership.OnBench {
 		bench = (" (Bench)")
 	}
-	if card.IsOwned {
+	if card.IsOwned() {
 		owner = string(card.Ownership.Owner)
 	}
 
-	if owner == "" && card.Score == 0 {
-		continue
+	if card.IsOwned() || card.Score > 0 {
+		fmt.Fprintf(w, "   %v \t%d\t%v%v\n", card.Name, card.Score, owner, bench)
 	}
-
-	fmt.Fprintf(w, "   %v \t%d\t%v%v\n", card.Name, card.Score, owner, bench)
 }
 
 func printCardScoreWithoutOwner(w io.Writer, card *Card) {

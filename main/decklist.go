@@ -51,7 +51,6 @@ func parseLine(line string) (cards []*Card, ok bool) {
 			panic("Could not parse number of card")
 		}
 
-		//ehtodo this card won't have its types -- problem?
 		card := &Card{Name: CardName(matches[2])}
 		cards := repeatCard(card, numberOfCard)
 
