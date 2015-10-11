@@ -16,6 +16,10 @@ type OverallResult struct {
 	UnownedCardScores map[CardName]int
 }
 
+func (r *OverallResult) GetScoresForType(cardType CardType) map[CardName]int {
+	return nil
+}
+
 func newOverallResult() OverallResult {
 	return OverallResult{
 		PlayerScores:      make(map[string]ScoreResult),
@@ -31,9 +35,10 @@ func (sr ScoreResult) Total() int {
 	return total
 }
 
-func calculateScore(players []Player, cardScores map[CardName]int) OverallResult {
+func calculateScore(players []Player, cards []*Card) OverallResult {
 	result := newOverallResult()
-	unownedCards := copy(cardScores)
+	unownedCards := copy(cards)
+	tagOwners(players, cards)
 	result.UnownedCardScores = unownedCards
 
 	for _, player := range players {
@@ -41,6 +46,10 @@ func calculateScore(players []Player, cardScores map[CardName]int) OverallResult
 	}
 
 	return result
+}
+
+func tagOwners(players []Player, cards []*Card) {
+
 }
 
 func copy(m map[CardName]int) map[CardName]int {

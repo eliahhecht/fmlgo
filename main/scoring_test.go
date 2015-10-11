@@ -44,3 +44,8 @@ func TestScoringForBenchCards(t *testing.T) {
 
 	assert.Equal(t, 100, score.BenchScores["Storm Crow"])
 }
+
+func TestScoringByCardType(t *testing.T) {
+//	score := invokeCalculateScore()
+//	landScores := score.GetScoresForType(CardType("Land"))
+}

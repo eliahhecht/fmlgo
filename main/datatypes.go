@@ -13,6 +13,7 @@ type Card struct {
 	Name      CardName
 	Types     mapset.Set
 	OtherSide CardName
+	Score int
 }
 
 // A Set is a slice of cards plus a set code

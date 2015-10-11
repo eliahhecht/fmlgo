@@ -10,15 +10,15 @@ var testDecklists = []Decklist{Decklist{Cards: makeCards("Black Lotus", "Black L
 
 func TestCardScorer_ScoresCardCorrectly(t *testing.T) {
 	legalCards := makeCards("Black Lotus")
-	scoreResult := ScoreCards(testDecklists, legalCards)
+	ScoreCards(testDecklists, legalCards)
 
-	assert.Equal(t, 2, scoreResult["Black Lotus"])
+	assert.Equal(t, 2, legalCards[0].Score)
 }
 
 func TestCardScorer_DoesNotScoreIllegalCards(t *testing.T) {
 	legalCards := makeCards("Storm Crow")
 
-	scoreResult := ScoreCards(testDecklists, legalCards)
+	ScoreCards(testDecklists, legalCards)
 
-	assert.Equal(t, 0, scoreResult["Black Lotus"])
+	assert.Equal(t, 0, legalCards[0].Score)
 }
