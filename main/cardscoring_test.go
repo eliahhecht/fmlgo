@@ -9,7 +9,7 @@ import (
 var testDecklists = []Decklist{Decklist{Cards: makeCards("Black Lotus", "Black Lotus", "Storm Crow")}}
 
 func TestCardScorer_ScoresCardCorrectly(t *testing.T) {
-	legalCards := makeCardCollection("Black Lotus")
+	legalCards := makeCardCollection("Black Lotus", "Storm Crow")
 	ScoreCards(testDecklists, legalCards)
 
 	assert.Equal(t, 2, legalCards.GetCard("Black Lotus").Score)
