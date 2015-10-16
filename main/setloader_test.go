@@ -8,11 +8,6 @@ import (
 
 var cards = loadCards([]string{"ORI", "BFZ"})
 
-func TestLoadSetsDoesNotIncludeBasicLands(t *testing.T) {
-	card := cards.GetCard("Swamp")
-	assert.Nil(t, card)
-}
-
 func TestLoadCardsContainsCorrectCards(t *testing.T) {
 	yavimayaCoast := cards.GetCard("Yavimaya Coast")
 	assert.NotNil(t, yavimayaCoast)
