@@ -1,6 +1,9 @@
 package main
 
-import "github.com/deckarep/golang-set"
+import (
+	"github.com/deckarep/golang-set"
+	"fmt"
+)
 
 // A CardType is a Magic card type (Artifact, Creature, etc)
 type CardType string
@@ -14,6 +17,9 @@ type CardName string
 // A PlayerName is the name of a FML player
 type PlayerName string
 
+// Rarity is the rarity of a card (Common, Uncommon, etc)
+type Rarity string
+
 // A Card represents a Magic card
 type Card struct {
 	Name      CardName
@@ -21,6 +27,7 @@ type Card struct {
 	OtherSide CardName
 	Score     int
 	Ownership OwnershipTag
+	Rarity Rarity
 }
 
 type OwnershipTag struct {
@@ -42,7 +49,11 @@ func (c *CardCollection) Contains(name CardName) bool {
 }
 
 func (c *CardCollection) GetCard(name CardName) *Card {
-	return c.CardsByName[name]
+	card, ok := c.CardsByName[name]
+	if !ok {
+		panic(fmt.Sprintf("Caller asked for card %v, but it was not found", name))
+	}
+	return card
 }
 
 func (c *CardCollection) GetCardsOfType(cardType CardType) []*Card {

@@ -49,14 +49,12 @@ func (s *Set) UnmarshalJSON(b []byte) error {
 		doubleFacedCards := make([]*Card, 0)
 
 		for _, c := range dto.Cards {
-			if c.Rarity != "Basic Land" {
-				newCard := makeCard(c)
-				cardsByName[newCard.Name] = &newCard
-				s.Cards = append(s.Cards, &newCard)
+			newCard := makeCard(c)
+			cardsByName[newCard.Name] = &newCard
+			s.Cards = append(s.Cards, &newCard)
 
-				if newCard.OtherSide != "" {
-					doubleFacedCards = append(doubleFacedCards, &newCard)
-				}
+			if newCard.OtherSide != "" {
+				doubleFacedCards = append(doubleFacedCards, &newCard)
 			}
 		}
 
@@ -80,6 +78,8 @@ func makeCard(dto cardDto) Card {
 			}
 		}
 	}
+
+	card.Rarity = Rarity(dto.Rarity)
 
 	return card
 }

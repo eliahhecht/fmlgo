@@ -28,3 +28,5 @@ main/main
 .idea/
 
 *.swp
+
+main/results.txt

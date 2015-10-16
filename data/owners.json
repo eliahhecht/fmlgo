@@ -5,16 +5,16 @@
         [
             "Ob Nixilis Reignited",
             "Monastery Swiftspear",
-            "Quarantine Field",
+            "Evolutionary Leap",
             "Atarka's Command",
-            "Crux of Fate",
-            "Collected Company",
-            "Anafenza, the Foremost",
-            "Llanowar Wastes"
+            "Bring to Light",
+            "Ojutai's Command",
+            "Arashin Cleric",
+            "Prairie Stream"
         ],
         "bench":
         [
-            "Prairie Stream",
+            "Llanowar Wastes",
             "Scalding Tarn"
         ]
     },
@@ -41,18 +41,18 @@
     {
         "main":
         [
-            "Liliana, Heretical Healer",
+            "Ugin, the Spirit Dragon",
             "Den Protector",
             "Hangarback Walker",
             "Wild Slash",
             "Roast",
             "Radiant Flames",
-            "Sandsteppe Citadel",
+            "Foul-Tongue Invocation",
             "Bloodstained Mire"
         ],
         "bench":
         [
-            "Dispel",
+            "Silumgar's Scorn",
             "Gurmag Angler"
         ]
     },
@@ -61,18 +61,18 @@
         "main":
         [
             "Gideon, Ally of Zendikar",
-            "Drana, Liberator of Malakir",
-            "Stasis Snare",
+            "Dragonlord Ojutai",
+            "Silkwrap",
             "Valorous Stance",
             "Ruinous Path",
-            "Scatter to the Winds",
-            "Undergrowth Champion",
+            "Disdainful Stroke",
+            "Shambling Vent",
             "Wooded Foothills"
         ],
         "bench":
         [
-            "Disdainful Stroke",
-            "Shambling Vent"
+            "Scatter to the Winds",
+            "Drana, Liberator of Malakir"
         ]
     },
     "Marcio":
@@ -83,7 +83,7 @@
             "Nissa, Vastwood Seer",
             "Retreat to Coralhelm",
             "Abzan Charm",
-            "Planar Outburst",
+            "Languish",
             "Dig Through Time",
             "Sunken Hollow",
             "Flooded Strand"
@@ -101,8 +101,8 @@
             "Kytheon, Hero of Akros",
             "Siege Rhino",
             "Outpost Siege",
-            "Ultimate Price",
-            "Exquisite Firecraft",
+            "Utter End",
+            "Despise",
             "Duress",
             "Abbot of Keral Keep",
             "Polluted Delta"
