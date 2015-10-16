@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/deckarep/golang-set"
 	"fmt"
+	"github.com/deckarep/golang-set"
 )
 
 // A CardType is a Magic card type (Artifact, Creature, etc)
@@ -27,7 +27,7 @@ type Card struct {
 	OtherSide CardName
 	Score     int
 	Ownership OwnershipTag
-	Rarity Rarity
+	Rarity    Rarity
 }
 
 type OwnershipTag struct {
