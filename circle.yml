@@ -1,5 +1,2 @@
 general:
   build_dir: main
-#test:
-#  override:
-#    - go test -v
