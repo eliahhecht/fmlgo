@@ -12,7 +12,10 @@ func TestCardScorer_ScoresCardCorrectly(t *testing.T) {
 	legalCards := makeCardCollection("Black Lotus", "Storm Crow")
 	ScoreCards(testDecklists, legalCards)
 
-	assert.Equal(t, 2, legalCards.GetCard("Black Lotus").Score)
+	blackLotusScore := legalCards.GetCard("Black Lotus").Score
+	if (blackLotusScore != 2) {
+		t.Errorf("Wanted %d, got %d", 2, blackLotusScore)
+	}
 }
 
 var testCardCollection = makeCardCollection("Black Lotus", "Plains", "Storm Crow")

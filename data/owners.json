@@ -3,19 +3,19 @@
     {
         "main":
         [
-            "Ob Nixilis Reignited",
+            "Sarkhan, the Dragonspeaker",
             "Monastery Swiftspear",
             "Evolutionary Leap",
             "Atarka's Command",
-            "Bring to Light",
+            "Exert Influence",
             "Ojutai's Command",
             "Arashin Cleric",
             "Prairie Stream"
         ],
         "bench":
         [
-            "Llanowar Wastes",
-            "Scalding Tarn"
+            "Mystic Monastery",
+            "Warden of the First Tree"
         ]
     },
     "Patrick":
@@ -45,9 +45,9 @@
             "Den Protector",
             "Hangarback Walker",
             "Wild Slash",
-            "Roast",
             "Radiant Flames",
             "Foul-Tongue Invocation",
+            "Sandsteppe Citadel",
             "Bloodstained Mire"
         ],
         "bench":
@@ -81,36 +81,36 @@
         [
             "Jace, Vryn's Prodigy",
             "Nissa, Vastwood Seer",
-            "Retreat to Coralhelm",
+            "Stasis Snare",
             "Abzan Charm",
             "Languish",
             "Dig Through Time",
-            "Sunken Hollow",
+            "Mantis Rider",
             "Flooded Strand"
         ],
         "bench":
         [
             "Wingmate Roc",
-            "Mantis Rider"
+            "Sunken Hollow"
         ]
     },
     "John":
     {
         "main":
         [
-            "Kytheon, Hero of Akros",
+            "Kiora, Master of the Depths",
             "Siege Rhino",
             "Outpost Siege",
-            "Utter End",
-            "Despise",
+            "Crackling Doom",
             "Duress",
+            "Kolaghan's Command",
             "Abbot of Keral Keep",
             "Polluted Delta"
         ],
         "bench":
         [
             "Soulfire Grand Master",
-            "Kolaghan's Command"
+            "Deathmist Raptor"
         ]
     }
 }

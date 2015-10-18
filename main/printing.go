@@ -13,7 +13,7 @@ func outputScores(players []*Player, allCards *CardCollection) {
 	w.Init(os.Stdout, 0, 8, 0, '\t', 0)
 
 	for _, player := range players {
-		fmt.Fprintf(w, "== %s: \t%d ==\n", player.Name, player.TotalScore())
+		fmt.Fprintf(w, " %s: \t%d \n", player.Name, player.TotalScore())
 		printCardScoresForPlayer(w, player.Cards)
 		fmt.Fprintln(w, "  Bench: \t")
 		printCardScoresForPlayer(w, player.Bench)
