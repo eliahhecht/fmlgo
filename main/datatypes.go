@@ -32,7 +32,7 @@ type Card struct {
 	Score     int
 	Ownership OwnershipTag
 	Rarity    Rarity
-	SetCodes mapset.Set
+	SetCodes  mapset.Set
 }
 
 type OwnershipTag struct {

@@ -8,7 +8,7 @@ import (
 	"text/tabwriter"
 )
 
-func outputScores(players []*Player, allCards *CardCollection) {
+func outputScores(players []*Player, allCards *CardCollection, standardLegalSets []SetCode) {
 	w := new(tabwriter.Writer)
 	w.Init(os.Stdout, 0, 8, 0, '\t', 0)
 
@@ -22,13 +22,29 @@ func outputScores(players []*Player, allCards *CardCollection) {
 
 	fmt.Fprintln(w, "Card scores by type: \t\t")
 
+	standardLegalCards := getStandardLegalCards(allCards, standardLegalSets)
+
 	for _, cardType := range AllCardTypes {
 		fmt.Fprintf(w, "\t\t\t\n%s: \t\t\n", cardType)
-		cardsForType := allCards.GetCardsOfType(cardType)
+		cardsForType := standardLegalCards.GetCardsOfType(cardType)
 		printCardScoresForType(w, cardsForType)
 	}
 
 	w.Flush()
+}
+
+func getStandardLegalCards(allCards *CardCollection, standardLegalSets []SetCode) *CardCollection {
+	cards := make(map[CardName]*Card)
+	for _, card := range allCards.CardsByName {
+		for _, setCode := range standardLegalSets {
+			if card.SetCodes.Contains(setCode) {
+				cards[card.Name] = card
+				break
+			}
+		}
+	}
+
+	return &CardCollection{cards}
 }
 
 func printCardScoresForPlayer(w io.Writer, cards []*Card) {

@@ -3,8 +3,8 @@ package main
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
 	"github.com/deckarep/golang-set"
+	"github.com/stretchr/testify/assert"
 )
 
 var cards = loadAllCards()
@@ -33,7 +33,7 @@ func TestLoadSetsLoadsAllTypesForDoubleFacedCard(t *testing.T) {
 func TestLoadCardsLoadsAllSetsForCards(t *testing.T) {
 	anticipate := *cards.GetCard("Anticipate")
 
-	if !anticipate.SetCodes.Equal(mapset.NewSetFromSlice([]interface{} {SetCode("DTK"), SetCode("BFZ")})) {
+	if !anticipate.SetCodes.Equal(mapset.NewSetFromSlice([]interface{}{SetCode("DTK"), SetCode("BFZ")})) {
 		t.Errorf("Expected card to have sets BFZ and DTK, but was %v", anticipate.SetCodes)
 	}
 }
