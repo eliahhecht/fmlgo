@@ -4,9 +4,10 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"github.com/deckarep/golang-set"
 )
 
-var cards = loadCards([]string{"ORI", "BFZ"})
+var cards = loadAllCards()
 
 func TestLoadCardsContainsCorrectCards(t *testing.T) {
 	yavimayaCoast := cards.GetCard("Yavimaya Coast")
@@ -27,4 +28,12 @@ func TestLoadSetsLoadsAllTypesForDoubleFacedCard(t *testing.T) {
 
 	assert.Contains(t, jace.Types.ToSlice(), CardType("Planeswalker"))
 	assert.Contains(t, jace.Types.ToSlice(), CardType("Creature"))
+}
+
+func TestLoadCardsLoadsAllSetsForCards(t *testing.T) {
+	anticipate := *cards.GetCard("Anticipate")
+
+	if !anticipate.SetCodes.Equal(mapset.NewSetFromSlice([]interface{} {SetCode("DTK"), SetCode("BFZ")})) {
+		t.Errorf("Expected card to have sets BFZ and DTK, but was %v", anticipate.SetCodes)
+	}
 }

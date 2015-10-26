@@ -21,6 +21,9 @@ type PlayerName string
 // Rarity is the rarity of a card (Common, Uncommon, etc)
 type Rarity string
 
+// SetCode is the two- or three-letter code for a set (e.g. BFZ for Battle for Zendikar)
+type SetCode string
+
 // A Card represents a Magic card
 type Card struct {
 	Name      CardName
@@ -29,6 +32,7 @@ type Card struct {
 	Score     int
 	Ownership OwnershipTag
 	Rarity    Rarity
+	SetCodes mapset.Set
 }
 
 type OwnershipTag struct {
@@ -69,7 +73,7 @@ func (c *CardCollection) GetCardsOfType(cardType CardType) []*Card {
 
 // A Set is a slice of cards plus a set code
 type Set struct {
-	Code  string
+	Code  SetCode
 	Cards []*Card
 }
 

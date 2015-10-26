@@ -13,7 +13,7 @@ func TestCardScorer_ScoresCardCorrectly(t *testing.T) {
 	ScoreCards(testDecklists, legalCards)
 
 	blackLotusScore := legalCards.GetCard("Black Lotus").Score
-	if (blackLotusScore != 2) {
+	if blackLotusScore != 2 {
 		t.Errorf("Wanted %d, got %d", 2, blackLotusScore)
 	}
 }

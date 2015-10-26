@@ -12,18 +12,18 @@ var decklistDir string
 func main() {
 	parseFlags()
 
-	legalCards := loadCards([]string{"KTK", "FRF", "DTK", "ORI", "BFZ", "EXP"})
+	allCards := loadAllCards()
 
-	players := buildPlayers(legalCards)
+	players := buildPlayers(allCards)
 
-	confirmCardsAreLegal(players, legalCards)
+	confirmCardsAreLegal(players, allCards)
 
 	loadDecklists()
-	ScoreCards(decklists, legalCards)
+	ScoreCards(decklists, allCards)
 
-	TagOwners(players, legalCards)
+	TagOwners(players, allCards)
 
-	outputScores(players, legalCards)
+	outputScores(players, allCards)
 }
 
 func parseFlags() {

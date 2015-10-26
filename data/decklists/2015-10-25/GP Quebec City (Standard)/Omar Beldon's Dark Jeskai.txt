@@ -1,0 +1,42 @@
+4 Jace, Vryn's Prodigy
+2 Soulfire Grand Master
+2 Tasigur, the Golden Fang
+4 Mantis Rider
+1 Dragonmaster Outcast
+2 Dig Through Time
+1 Negate
+1 Dispel
+1 Duress
+1 Jeskai Charm
+3 Kolaghan's Command
+3 Ojutai's Command
+2 Utter End
+3 Crackling Doom
+2 Wild Slash
+2 Fiery Impulse
+4 Mystic Monastery
+1 Nomad Outpost
+2 Prairie Stream
+1 Sunken Hollow
+1 Smoldering Marsh
+4 Polluted Delta
+4 Bloodstained Mire
+4 Flooded Strand
+2 Mountain
+1 Plains
+1 Swamp
+1 Island
+
+
+1 Dispel
+1 Duress
+1 Virulent Plague
+1 Radiant Flames
+2 Ultimate Price
+1 Felidar Cub
+2 Disdainful Stroke
+1 Painful Truths
+2 Mastery of the Unseen
+1 Planar Outburst
+1 Ugin, the Spirit Dragon
+1 Arashin Cleric

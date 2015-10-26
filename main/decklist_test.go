@@ -27,12 +27,6 @@ func TestDecklistParsesCorrectCards(t *testing.T) {
 	assertContains(t, cards, &Card{Name: "Plains"}, 12)
 }
 
-func TestDecklistValidates75Cards(t *testing.T) {
-	decklistString := "69 Plains"
-
-	assert.Panics(t, func() { parseDecklist(decklistString) })
-}
-
 func assertContains(t *testing.T, haystack []*Card, needle *Card, expectedNumber int) {
 	numberFound := 0
 	for _, card := range haystack {

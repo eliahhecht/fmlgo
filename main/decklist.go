@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"regexp"
 	"strconv"
 	"strings"
@@ -38,12 +37,6 @@ func parseDecklist(decklist string) []*Card {
 		if ok {
 			allCards = append(allCards, newCards...)
 		}
-	}
-
-	if len(allCards) != 75 {
-		error := fmt.Sprintf("All decklists must have 75 cards. %d cards found in %v",
-			len(allCards), decklist)
-		panic(error)
 	}
 
 	return allCards

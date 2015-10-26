@@ -20,16 +20,20 @@ type setDto struct {
 
 const cardDataFile string = "../data/AllSets.json"
 
-func loadCards(setNames []string) *CardCollection {
+func loadAllCards() *CardCollection {
 	sets := loadAllSets()
 
 	cards := make(map[CardName]*Card)
-	for _, setName := range setNames {
-		set := sets[setName]
+	for _, set := range sets {
 		for _, card := range set.Cards {
-			cards[card.Name] = card
+			if existingCard, ok := cards[card.Name]; ok {
+				existingCard.SetCodes.Add(set.Code)
+			} else {
+				cards[card.Name] = card
+			}
 		}
 	}
+
 	return &CardCollection{cards}
 }
 
@@ -44,13 +48,13 @@ func (s *Set) UnmarshalJSON(b []byte) error {
 	var dto setDto
 	err := json.Unmarshal(b, &dto)
 	if err == nil {
-		s.Code = dto.Code
+		s.Code = SetCode(dto.Code)
 
 		cardsByName := make(map[CardName]*Card)
 		doubleFacedCards := make([]*Card, 0)
 
 		for _, c := range dto.Cards {
-			newCard := makeCard(c)
+			newCard := makeCard(c, SetCode(s.Code))
 			cardsByName[newCard.Name] = &newCard
 			s.Cards = append(s.Cards, &newCard)
 
@@ -66,8 +70,9 @@ func (s *Set) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-func makeCard(dto cardDto) Card {
-	card := Card{Name: CardName(dto.Name), Types: mapset.NewSet()}
+func makeCard(dto cardDto, setCode SetCode) Card {
+	card := Card{Name: CardName(dto.Name), Types: mapset.NewSet(), SetCodes: mapset.NewSet()}
+	card.SetCodes.Add(setCode)
 	for _, t := range dto.Types {
 		card.Types.Add(CardType(t))
 	}

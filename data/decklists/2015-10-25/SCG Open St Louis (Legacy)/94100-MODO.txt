@@ -1,0 +1,43 @@
+4 Retreat to Coralhelm
+1 Sigarda, Host of Herons
+1 Kessig Wolf Run
+4 Green Sun's Zenith
+2 Jace, the Mind Sculptor
+1 Sejiri Steppe
+4 Misty Rainforest
+1 Qasali Pridemage
+3 Noble Hierarch
+4 Knight of the Reliquary
+2 Vendilion Clique
+1 Dryad Arbor
+4 Windswept Heath
+1 Forest
+1 Birds of Paradise
+3 Daze
+4 Brainstorm
+2 Wasteland
+4 Force of Will
+1 Sylvan Library
+1 Karakas
+2 Tundra
+3 Tropical Island
+4 Swords to Plowshares
+1 Taiga
+1 Savannah
+
+Sideboard
+1 Council's Judgment
+1 Izzet Staticaster
+1 Scavenging Ooze
+1 Bojuka Bog
+1 Qasali Pridemage
+1 Path to Exile
+1 Gaddock Teeg
+1 Krosan Grip
+1 Pithing Needle
+1 Engineered Explosives
+2 Envelop
+1 Submerge
+1 Crop Rotation
+1 Tormod's Crypt
+

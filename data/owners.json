@@ -4,18 +4,18 @@
         "main":
         [
             "Sarkhan, the Dragonspeaker",
-            "Monastery Swiftspear",
+            "Warden of the First Tree",
             "Evolutionary Leap",
-            "Atarka's Command",
-            "Exert Influence",
+            "Fiery Impulse",
+            "Hordeling Outburst",
             "Ojutai's Command",
             "Arashin Cleric",
-            "Prairie Stream"
+            "Mystic Monastery"
         ],
         "bench":
         [
-            "Mystic Monastery",
-            "Warden of the First Tree"
+            "Prairie Stream",
+            "Monastery Swiftspear"
         ]
     },
     "Patrick":
@@ -61,17 +61,17 @@
         "main":
         [
             "Gideon, Ally of Zendikar",
-            "Dragonlord Ojutai",
+            "Anafenza, the Foremost",
             "Silkwrap",
             "Valorous Stance",
-            "Ruinous Path",
+            "Transgress the Mind",
             "Disdainful Stroke",
-            "Shambling Vent",
+            "Tasigur, the Golden Fang",
             "Wooded Foothills"
         ],
         "bench":
         [
-            "Scatter to the Winds",
+            "Jeskai Charm",
             "Drana, Liberator of Malakir"
         ]
     },
@@ -81,9 +81,9 @@
         [
             "Jace, Vryn's Prodigy",
             "Nissa, Vastwood Seer",
-            "Stasis Snare",
+            "Jeskai Ascendancy",
             "Abzan Charm",
-            "Languish",
+            "Dragon Fodder",
             "Dig Through Time",
             "Mantis Rider",
             "Flooded Strand"
