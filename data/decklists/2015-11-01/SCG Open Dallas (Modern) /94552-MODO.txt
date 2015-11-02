@@ -1,0 +1,33 @@
+1 Ulamog, the Ceaseless Hunger
+1 Void Winnower
+2 Ugin, the Spirit Dragon
+2 Spellskite
+4 Karn Liberated
+3 Wurmcoil Engine
+4 Ancient Stirrings
+1 Emrakul, the Aeons Torn
+1 Eye of Ugin
+4 Expedition Map
+2 Relic of Progenitus
+4 Grove of the Burnwillows
+4 Chromatic Star
+2 Ghost Quarter
+4 Oblivion Stone
+4 Sylvan Scrying
+1 Forest
+4 Chromatic Sphere
+4 Urza's Tower
+4 Urza's Power Plant
+4 Urza's Mine
+
+Sideboard
+1 Crumble to Dust
+2 Rending Volley
+1 Vandalblast
+2 Spellskite
+2 Torpor Orb
+1 Wurmcoil Engine
+2 Nature's Claim
+1 Sundering Titan
+3 Pyroclasm
+

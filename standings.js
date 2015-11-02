@@ -191,5 +191,9 @@
     addResults(3, 'Marcio', 93, 'John', 78);
     addResults(3, 'Dan', 62, 'Patrick', 28);
 
+    addResults(4, 'Paul', 68, 'Marcio', 60);
+    addResults(4, 'Eliah', 116, 'John', 47)
+    addResults(4, 'Patrick', 88, 'Dan', 47)
+
     calculateStandings();
 })();

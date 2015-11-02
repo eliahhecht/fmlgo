@@ -1,0 +1,30 @@
+4 Scalding Tarn
+4 Misty Rainforest
+3 Steam Vents
+3 Sulfur Falls
+2 Desolate Lighthouse
+1 Stomping Ground
+5 Island
+1 Mountain
+4 Lightning Bolt
+4 Serum Visions
+3 Dispel
+2 Spell Snare
+4 Snapcaster Mage
+4 Remand
+4 Deceiver Exarch
+2 Pestermite
+2 Vendilion Clique
+2 Electrolyze
+2 Cryptic Command
+4 Splinter Twin
+
+
+3 Ancient Grudge
+2 Keranos, God of Storms
+2 Jace, Architect of Thought
+2 Blood Moon
+2 Roast
+2 Pyroclasm
+1 Grim Lavamancer
+1 Negate

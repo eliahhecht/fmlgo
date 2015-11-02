@@ -1,36 +1,52 @@
 package main
 
 import (
+	"encoding/csv"
 	"fmt"
-	"io"
+	"log"
 	"os"
 	"sort"
-	"text/tabwriter"
+	"strconv"
 )
 
 func outputScores(players []*Player, allCards *CardCollection, standardLegalSets []SetCode) {
-	w := new(tabwriter.Writer)
-	w.Init(os.Stdout, 0, 8, 0, '\t', 0)
+	csvFile, err := os.Create("out.csv")
+	check(err)
+	defer csvFile.Close()
+	csvWriter := csv.NewWriter(csvFile)
+	defer csvWriter.Flush()
 
 	for _, player := range players {
-		fmt.Fprintf(w, " %s: \t%d \n", player.Name, player.TotalScore())
-		printCardScoresForPlayer(w, player.Cards)
-		fmt.Fprintln(w, "  Bench: \t")
-		printCardScoresForPlayer(w, player.Bench)
-		fmt.Fprintln(w, "\t")
+		fmt.Printf("%s: %d\n", player.Name, player.TotalScore())
+		writeCsvLine(csvWriter, string(player.Name))
+		printCardScoresForPlayer(csvWriter, player.Cards)
+		writeCsvLine(csvWriter, "Bench")
+		printCardScoresForPlayer(csvWriter, player.Bench)
+		writeCsvLine(csvWriter, "")
 	}
 
-	fmt.Fprintln(w, "Card scores by type: \t\t")
+	writeCsvLine(csvWriter, "")
+	writeCsvLine(csvWriter, "Card scores by type")
+	writeCsvLine(csvWriter, "")
 
 	standardLegalCards := getStandardLegalCards(allCards, standardLegalSets)
 
 	for _, cardType := range AllCardTypes {
-		fmt.Fprintf(w, "\t\t\t\n%s: \t\t\n", cardType)
+		writeCsvLine(csvWriter, string(cardType))
 		cardsForType := standardLegalCards.GetCardsOfType(cardType)
-		printCardScoresForType(w, cardsForType)
+		printCardScoresForType(csvWriter, cardsForType)
+		writeCsvLine(csvWriter, "")
 	}
+}
 
-	w.Flush()
+func writeCsvLine(w *csv.Writer, content string) {
+	w.Write([]string{content})
+}
+
+func check(e error) {
+	if e != nil {
+		log.Fatal(e)
+	}
 }
 
 func getStandardLegalCards(allCards *CardCollection, standardLegalSets []SetCode) *CardCollection {
@@ -47,15 +63,15 @@ func getStandardLegalCards(allCards *CardCollection, standardLegalSets []SetCode
 	return &CardCollection{cards}
 }
 
-func printCardScoresForPlayer(w io.Writer, cards []*Card) {
+func printCardScoresForPlayer(w *csv.Writer, cards []*Card) {
 	printCardScores(w, cards, 10000, false)
 }
 
-func printCardScoresForType(w io.Writer, cards []*Card) {
+func printCardScoresForType(w *csv.Writer, cards []*Card) {
 	printCardScores(w, cards, 15, true)
 }
 
-func printCardScores(w io.Writer, cards []*Card, max int, includeOwner bool) {
+func printCardScores(w *csv.Writer, cards []*Card, max int, includeOwner bool) {
 	cardsByScore := ByScore(cards)
 	sort.Sort(sort.Reverse(&cardsByScore))
 
@@ -72,23 +88,24 @@ func printCardScores(w io.Writer, cards []*Card, max int, includeOwner bool) {
 	}
 }
 
-func printCardScoreWithOwner(w io.Writer, card *Card) {
+func printCardScoreWithOwner(w *csv.Writer, card *Card) {
 	owner := ""
 	bench := ""
 	if card.Ownership.OnBench {
-		bench = (" (Bench)")
+		bench = ("(Bench)")
 	}
 	if card.IsOwned() {
 		owner = string(card.Ownership.Owner)
 	}
 
 	if card.IsOwned() || card.Score > 0 {
-		fmt.Fprintf(w, "   %v \t%d\t%v%v\n", card.Name, card.Score, owner, bench)
+		record := []string{string(card.Name), strconv.Itoa(card.Score), owner, bench}
+		w.Write(record)
 	}
 }
 
-func printCardScoreWithoutOwner(w io.Writer, card *Card) {
-	fmt.Fprintf(w, "   %v \t%d\n", card.Name, card.Score)
+func printCardScoreWithoutOwner(w *csv.Writer, card *Card) {
+	w.Write([]string{string(card.Name), strconv.Itoa(card.Score)})
 }
 
 type ByScore []*Card

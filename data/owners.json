@@ -4,10 +4,10 @@
         "main":
         [
             "Sarkhan, the Dragonspeaker",
-            "Warden of the First Tree",
+            "Monastery Swiftspear",
             "Evolutionary Leap",
-            "Fiery Impulse",
-            "Hordeling Outburst",
+            "Atarka's Command",
+            "Exert Influence",
             "Ojutai's Command",
             "Arashin Cleric",
             "Mystic Monastery"
@@ -15,7 +15,7 @@
         "bench":
         [
             "Prairie Stream",
-            "Monastery Swiftspear"
+            "Fiery Impulse"
         ]
     },
     "Patrick":
@@ -61,18 +61,18 @@
         "main":
         [
             "Gideon, Ally of Zendikar",
-            "Anafenza, the Foremost",
-            "Silkwrap",
-            "Valorous Stance",
-            "Transgress the Mind",
-            "Disdainful Stroke",
             "Tasigur, the Golden Fang",
+            "Silkwrap",
+            "Dispel",
+            "Sylvan Scrying",
+            "Utter End",
+            "Verdant Catacombs",
             "Wooded Foothills"
         ],
         "bench":
         [
             "Jeskai Charm",
-            "Drana, Liberator of Malakir"
+            "Anafenza, the Foremost"
         ]
     },
     "Marcio":
@@ -80,17 +80,17 @@
         "main":
         [
             "Jace, Vryn's Prodigy",
-            "Nissa, Vastwood Seer",
-            "Jeskai Ascendancy",
-            "Abzan Charm",
-            "Dragon Fodder",
-            "Dig Through Time",
             "Mantis Rider",
+            "Retreat to Coralhelm",
+            "Abzan Charm",
+            "Ruinous Path",
+            "Dig Through Time",
+            "Scalding Tarn",
             "Flooded Strand"
         ],
         "bench":
         [
-            "Wingmate Roc",
+            "Nissa, Vastwood Seer",
             "Sunken Hollow"
         ]
     },
@@ -104,7 +104,7 @@
             "Crackling Doom",
             "Duress",
             "Kolaghan's Command",
-            "Abbot of Keral Keep",
+            "Misty Rainforest",
             "Polluted Delta"
         ],
         "bench":

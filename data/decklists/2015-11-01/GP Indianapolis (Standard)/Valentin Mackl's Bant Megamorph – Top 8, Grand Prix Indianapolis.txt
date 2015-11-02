@@ -1,0 +1,29 @@
+5 Plains
+4 Forest
+4 Wooded Foothills
+4 Windswept Heath
+4 Flooded Strand
+4 Deathmist Raptor
+3 Canopy Vista
+1 Prairie Stream
+1 Valorous Stance
+1 Stasis Snare
+3 Silkwrap
+4 Gideon, Ally of Zendikar
+4 Dromoka's Command
+3 Wingmate Roc
+4 Warden of the First Tree
+2 Nissa, Vastwood Seer
+3 Knight of the White Orchid
+2 Hangarback Walker
+4 Den Protector
+
+
+2 Valorous Stance
+1 Stasis Snare
+1 Silkwrap
+1 Knight of the White Orchid
+4 Disdainful Stroke
+3 Surge of Righteousness
+2 Mastery of the Unseen
+1 Arashin Cleric
