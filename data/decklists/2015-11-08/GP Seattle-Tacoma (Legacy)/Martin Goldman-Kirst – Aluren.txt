@@ -1,0 +1,39 @@
+4 Misty Rainforest
+4 Verdant Catacombs
+2 Polluted Delta
+2 Tropical Island
+1 Bayou
+1 Underground Sea
+1 Taiga
+2 Forest
+1 Island
+1 Swamp
+1 Volrath's Stronghold
+4 Aluren
+4 Imperial Recruiter
+4 Shardless Agent
+4 Baleful Strix
+4 Deathrite Shaman
+2 Dream Stalker
+1 Cavern Harpy
+1 Parasitic Strix
+1 Reclamation Sage
+1 Eternal Witness
+4 Brainstorm
+4 Cabal Therapy
+2 Thoughtseize
+1 Sylvan Library
+3 Abrupt Decay
+
+
+1 Thoughtseize
+1 Abrupt Decay
+2 Carpet of Flowers
+1 Null Rod
+2 Scavenging Ooze
+1 Bone Shredder
+1 Minister of Pain
+1 Force of Will
+2 Swan Song
+1 Krosan Grip
+2 Toxic Deluge

@@ -4,18 +4,18 @@
         "main":
         [
             "Sarkhan, the Dragonspeaker",
-            "Monastery Swiftspear",
-            "Evolutionary Leap",
-            "Atarka's Command",
+            "Arashin Cleric",
+            "Hardened Scales",
+            "Surge of Righteousness",
             "Exert Influence",
             "Ojutai's Command",
-            "Arashin Cleric",
-            "Mystic Monastery"
+            "Prairie Stream",
+            "Shambling Vent"
         ],
         "bench":
         [
-            "Prairie Stream",
-            "Fiery Impulse"
+            "Atarka's Command",
+            "Monastery Swiftspear"
         ]
     },
     "Patrick":
@@ -44,16 +44,16 @@
             "Ugin, the Spirit Dragon",
             "Den Protector",
             "Hangarback Walker",
-            "Wild Slash",
+            "Ultimate Price",
             "Radiant Flames",
-            "Foul-Tongue Invocation",
-            "Sandsteppe Citadel",
+            "Transgress the Mind",
+            "Mystic Monastery",
             "Bloodstained Mire"
         ],
         "bench":
         [
-            "Silumgar's Scorn",
-            "Gurmag Angler"
+            "Wild Slash",
+            "Llanowar Wastes"
         ]
     },
     "Eliah":
@@ -63,15 +63,15 @@
             "Gideon, Ally of Zendikar",
             "Tasigur, the Golden Fang",
             "Silkwrap",
-            "Dispel",
-            "Sylvan Scrying",
-            "Utter End",
-            "Verdant Catacombs",
+            "Fiery Impulse",
+            "Self-Inflicted Wound",
+            "Dig Through Time",
+            "Warden of the First Tree",
             "Wooded Foothills"
         ],
         "bench":
         [
-            "Jeskai Charm",
+            "Verdant Catacombs",
             "Anafenza, the Foremost"
         ]
     },
@@ -81,11 +81,11 @@
         [
             "Jace, Vryn's Prodigy",
             "Mantis Rider",
-            "Retreat to Coralhelm",
+            "Virulent Plague",
             "Abzan Charm",
-            "Ruinous Path",
-            "Dig Through Time",
-            "Scalding Tarn",
+            "Explosive Vegetation",
+            "Disdainful Stroke",
+            "Wingmate Roc",
             "Flooded Strand"
         ],
         "bench":
@@ -98,19 +98,19 @@
     {
         "main":
         [
-            "Kiora, Master of the Depths",
+            "Nissa, Vastwood Seer",
             "Siege Rhino",
             "Outpost Siege",
             "Crackling Doom",
             "Duress",
             "Kolaghan's Command",
-            "Misty Rainforest",
+            "Soulfire Grand Master",
             "Polluted Delta"
         ],
         "bench":
         [
-            "Soulfire Grand Master",
-            "Deathmist Raptor"
+            "Misty Rainforest",
+            "Scalding Tarn"
         ]
     }
 }

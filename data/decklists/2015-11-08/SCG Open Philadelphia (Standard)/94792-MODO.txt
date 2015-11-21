@@ -1,0 +1,30 @@
+2 Canopy Vista
+4 Shambling Vent
+4 Gideon, Ally of Zendikar
+1 Sunken Hollow
+1 Smoldering Marsh
+3 Hangarback Walker
+4 Den Protector
+4 Dromoka's Command
+4 Warden of the First Tree
+1 Murderous Cut
+4 Siege Rhino
+4 Abzan Charm
+4 Anafenza, the Foremost
+2 Wingmate Roc
+4 Windswept Heath
+4 Wooded Foothills
+4 Flooded Strand
+2 Forest
+2 Plains
+2 Llanowar Wastes
+
+Sideboard
+2 Transgress the Mind
+2 Self-Inflicted Wound
+3 Silkwrap
+1 Tasigur, the Golden Fang
+1 Wingmate Roc
+3 Ultimate Price
+3 Duress
+

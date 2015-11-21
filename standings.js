@@ -136,7 +136,6 @@
                 'matchPoints: ' + player.points +
                 ' opponentWin: ' + player.omw + '%' +
                 ' totalScore: ' + player.totalScore +
-                ' lastTwoScore: ' + player.lastTwoScore +
                 ')');
         }
 
@@ -192,8 +191,16 @@
     addResults(3, 'Dan', 62, 'Patrick', 28);
 
     addResults(4, 'Paul', 68, 'Marcio', 60);
-    addResults(4, 'Eliah', 116, 'John', 47)
-    addResults(4, 'Patrick', 88, 'Dan', 47)
+    addResults(4, 'Eliah', 116, 'John', 47);
+    addResults(4, 'Patrick', 88, 'Dan', 47);
+
+    addResults(5, 'Marcio', 92, 'Paul', 51);
+    addResults(5, 'Eliah', 89, 'Patrick', 56);
+    addResults(5, 'John', 77, 'Dan', 32);
+
+    addResults(6, 'Paul', 32, 'Marcio', 62);
+    addResults(6, 'Eliah', 53, 'John', 44);
+    addResults(6, 'Patrick', 40, 'Dan', 42);
 
     calculateStandings();
 })();

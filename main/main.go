@@ -23,7 +23,7 @@ func main() {
 
 	TagOwners(players, allCards)
 
-	outputScores(players, allCards, []SetCode{"KTK", "FRF", "DTK", "ORI", "BFZ"})
+	outputScores(players, allCards, []SetCode{"KTK", "FRF", "DTK", "ORI", "BFZ", "EXP"})
 }
 
 func parseFlags() {
