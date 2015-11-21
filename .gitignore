@@ -34,3 +34,4 @@ main/results.txt
 main/out.csv
 
 .vscode
+npm-debug.log
