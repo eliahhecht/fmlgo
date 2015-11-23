@@ -9,7 +9,7 @@ import (
 
 var decklistDir string
 
-func main() {
+func cliMain() {
 	parseFlags()
 
 	allCards := loadAllCards()

@@ -1,0 +1,16 @@
+<h1>Rosters</h1>
+
+<table>
+    <tr>
+        {{ range . }}
+            <td>{{ .Name }}</td>
+        {{ end }}
+    </tr>
+    {{ range $_, $i := ((index . 0).Cards) }}
+        <tr>
+        {{ range . }}
+            <td>{{ index .Cards $i }}</td>
+        {{ end }}
+        </tr>
+    {{ end }}
+</table>
