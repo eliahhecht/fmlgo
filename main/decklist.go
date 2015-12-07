@@ -52,12 +52,23 @@ func parseLine(line string) (cards []*Card, ok bool) {
 			panic("Could not parse number of card")
 		}
 
-		card := &Card{Name: CardName(matches[2])}
+		cardName := parseCardName(matches[2])
+
+		card := &Card{Name: cardName}
 		cards := repeatCard(card, numberOfCard)
 
 		return cards, true
 	}
 	return nil, false
+}
+
+func parseCardName(rawCardName string) CardName {
+	if (strings.Contains(rawCardName, "//")) {
+		leftHalf := strings.Split(rawCardName, "//")[0]
+		return CardName(strings.TrimSpace(leftHalf))
+	} else {
+		return CardName(rawCardName)
+	}
 }
 
 func repeatCard(card *Card, numberOfCard int) []*Card {

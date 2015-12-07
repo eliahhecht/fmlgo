@@ -38,4 +38,10 @@ func assertContains(t *testing.T, haystack []*Card, needle *Card, expectedNumber
 	assert.Equal(t, expectedNumber, numberFound)
 }
 
-//ehtodo test makes sure 75 cards
+func TestSplitCardsAreParsedCorrectly(t *testing.T) {
+	decklistString := "2 Rise // Fall"
+
+	cards := parseDecklist(decklistString)
+
+	assertContains(t, cards, &Card{Name: "Rise"}, 2)
+}

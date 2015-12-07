@@ -1,0 +1,35 @@
+2 Monastery Mentor
+4 Terminus
+3 Snapcaster Mage
+3 Jace, the Mind Sculptor
+4 Scalding Tarn
+1 Arid Mesa
+3 Ponder
+4 Counterbalance
+4 Sensei's Divining Top
+4 Flooded Strand
+1 Mountain
+2 Plains
+4 Island
+2 Counterspell
+4 Brainstorm
+4 Force of Will
+1 Pyroblast
+4 Swords to Plowshares
+3 Tundra
+1 Red Elemental Blast
+2 Volcanic Island
+
+Sideboard
+1 Council's Judgment
+1 Wear
+2 Rest in Peace
+1 Izzet Staticaster
+1 Entreat the Angels
+3 Flusterstorm
+2 Vendilion Clique
+1 Pyroclasm
+1 Blood Moon
+1 Pyroblast
+1 Red Elemental Blast
+
