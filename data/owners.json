@@ -104,13 +104,13 @@
             "Dispel",
             "Duress",
             "Kolaghan's Command",
-            "Scalding Tarn",
+            "Soulfire Grand Master",
             "Polluted Delta"
         ],
         "bench":
         [
             "Misty Rainforest",
-            "Soulfire Grand Master"
+            "Scalding Tarn"
         ]
     }
 }

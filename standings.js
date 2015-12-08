@@ -211,7 +211,7 @@
     addResults(8, 'Dan', 0, 'Patrick', 10);
 
     addResults(9, 'Marcio', 68, 'Paul', 41);
-    addResults(9, 'Eliah', 57, 'John', 53);
+    addResults(9, 'Eliah', 57, 'John', 57);
     addResults(9, 'Patrick', 43, 'Dan', 49);
 
     calculateStandings();
