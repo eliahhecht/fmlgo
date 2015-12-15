@@ -214,5 +214,9 @@
     addResults(9, 'Eliah', 57, 'John', 57);
     addResults(9, 'Patrick', 43, 'Dan', 49);
 
+    addResults(10, 'Marcio', 240, 'Eliah', 315);
+    addResults(10, 'Paul', 247, 'John', 237);
+    addResults(10, 'Dan', 240, 'Patrick', 211);
+
     calculateStandings();
 })();

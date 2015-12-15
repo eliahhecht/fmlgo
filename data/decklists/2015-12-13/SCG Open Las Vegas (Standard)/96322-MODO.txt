@@ -1,0 +1,35 @@
+1 Sunken Hollow
+2 Smoldering Marsh
+2 Shambling Vent
+2 Prairie Stream
+3 Painful Truths
+4 Jace, Vryn's Prodigy
+4 Fiery Impulse
+2 Ojutai's Command
+2 Roast
+3 Kolaghan's Command
+2 Tasigur, the Golden Fang
+2 Monastery Mentor
+4 Soulfire Grand Master
+2 Utter End
+2 Treasure Cruise
+4 Crackling Doom
+3 Mystic Monastery
+1 Dispel
+4 Bloodstained Mire
+4 Polluted Delta
+3 Flooded Strand
+1 Swamp
+1 Mountain
+1 Island
+1 Plains
+
+Sideboard
+2 Radiant Flames
+1 Exert Influence
+2 Roast
+3 Arashin Cleric
+1 Dispel
+3 Negate
+2 Duress
+
