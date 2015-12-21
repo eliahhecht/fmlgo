@@ -1,0 +1,31 @@
+4 Zulaport Cutthroat
+1 Prairie Stream
+2 Sunken Hollow
+2 Canopy Vista
+4 Catacomb Sifter
+1 Liliana, Heretical Healer
+4 Jace, Vryn's Prodigy
+4 Collected Company
+4 Sidisi's Faithful
+4 Rally the Ancestors
+3 Grim Haruspex
+3 Evolving Wilds
+4 Elvish Visionary
+4 Windswept Heath
+4 Polluted Delta
+4 Flooded Strand
+4 Nantuko Husk
+1 Forest
+1 Plains
+1 Swamp
+1 Island
+
+Sideboard
+1 Liliana, Heretical Healer
+4 Arashin Cleric
+1 Valorous Stance
+3 Murderous Cut
+2 Abzan Ascendancy
+2 Anafenza, the Foremost
+2 Dispel
+

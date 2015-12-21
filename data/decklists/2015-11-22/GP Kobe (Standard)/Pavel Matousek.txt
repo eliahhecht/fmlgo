@@ -1,0 +1,25 @@
+1 Prairie Stream
+4 Shrine of the Forsaken Gods
+8 Forest
+4 Lumbering Falls
+3 Island
+3 Windswept Heath
+2 Nissa, Vastwood Seer
+4 Rattleclaw Mystic
+4 Leaf Gilder
+4 Ulamog, the Ceaseless Hunger
+2 Dig Through Time
+4 Nissa's Renewal
+3 Nissa's Pilgrimage
+4 Part the Waterveil
+4 Explosive Vegetation
+4 Ugin, the Spirit Dragon
+2 Kiora, Master of the Depths
+
+
+1 Sanctum of Ugin
+3 Dispel
+4 Jaddi Offshoot
+4 Winds of Qal Sisma
+1 Void Winnower
+2 Conduit of Ruin

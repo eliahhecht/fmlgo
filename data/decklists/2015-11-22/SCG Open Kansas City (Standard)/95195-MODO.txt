@@ -1,0 +1,35 @@
+2 Smoldering Marsh
+2 Prairie Stream
+1 Sunken Hollow
+4 Jace, Vryn's Prodigy
+4 Fiery Impulse
+2 Kolaghan's Command
+3 Ojutai's Command
+2 Roast
+3 Soulfire Grand Master
+4 Crackling Doom
+2 Utter End
+4 Dig Through Time
+3 Mystic Monastery
+2 Despise
+2 Dragonmaster Outcast
+2 Negate
+4 Polluted Delta
+4 Flooded Strand
+4 Bloodstained Mire
+1 Island
+1 Plains
+1 Swamp
+3 Mountain
+
+Sideboard
+1 Felidar Cub
+2 Painful Truths
+2 Radiant Flames
+1 Pia and Kiran Nalaar
+3 Infinite Obliteration
+2 Arashin Cleric
+2 Disdainful Stroke
+1 Dispel
+1 Erase
+

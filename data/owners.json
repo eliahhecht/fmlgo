@@ -3,18 +3,18 @@
     {
         "main":
         [
-            "Sarkhan, the Dragonspeaker",
+            "Chandra, Fire of Kaladesh",
             "Arashin Cleric",
             "Hardened Scales",
-            "Surge of Righteousness",
-            "Exert Influence",
-            "Ojutai's Command",
+            "Atarka's Command",
+            "Dragon Fodder",
+            "Exquisite Firecraft",
             "Prairie Stream",
             "Shambling Vent"
         ],
         "bench":
         [
-            "Atarka's Command",
+            "Abbot of Keral Keep",
             "Monastery Swiftspear"
         ]
     },
@@ -61,18 +61,18 @@
         "main":
         [
             "Gideon, Ally of Zendikar",
-            "Tasigur, the Golden Fang",
+            "Zurgo Bellstriker",
             "Silkwrap",
             "Fiery Impulse",
-            "Self-Inflicted Wound",
-            "Dig Through Time",
-            "Warden of the First Tree",
+            "Roast",
+            "Murderous Cut",
+            "Anafenza, the Foremost",
             "Wooded Foothills"
         ],
         "bench":
         [
-            "Verdant Catacombs",
-            "Anafenza, the Foremost"
+            "Dragonlord Ojutai",
+            "Seeker of the Way"
         ]
     },
     "Marcio":
@@ -85,13 +85,13 @@
             "Abzan Charm",
             "Explosive Vegetation",
             "Disdainful Stroke",
-            "Wingmate Roc",
+            "Sunken Hollow",
             "Flooded Strand"
         ],
         "bench":
         [
-            "Nissa, Vastwood Seer",
-            "Sunken Hollow"
+            "Wingmate Roc",
+            "Arid Mesa"
         ]
     },
     "John":
@@ -100,8 +100,8 @@
         [
             "Nissa, Vastwood Seer",
             "Siege Rhino",
-            "Outpost Siege",
-            "Crackling Doom",
+            "Abzan Ascendancy",
+            "Dispel",
             "Duress",
             "Kolaghan's Command",
             "Soulfire Grand Master",

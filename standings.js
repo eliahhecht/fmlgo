@@ -202,5 +202,21 @@
     addResults(6, 'Eliah', 53, 'John', 44);
     addResults(6, 'Patrick', 40, 'Dan', 42);
 
+    addResults(7, 'Paul', 77, 'Marcio', 127);
+    addResults(7, 'Eliah', 108, 'John', 119);
+    addResults(7, 'Patrick', 58, 'Dan', 99)
+
+    addResults(8, 'Paul', 2, 'Marcio', 10);
+    addResults(8, 'John', 31, 'Eliah', 16);
+    addResults(8, 'Dan', 0, 'Patrick', 10);
+
+    addResults(9, 'Marcio', 68, 'Paul', 41);
+    addResults(9, 'Eliah', 57, 'John', 57);
+    addResults(9, 'Patrick', 43, 'Dan', 49);
+
+    addResults(10, 'Marcio', 240, 'Eliah', 315);
+    addResults(10, 'Paul', 247, 'John', 237);
+    addResults(10, 'Dan', 240, 'Patrick', 211);
+
     calculateStandings();
 })();
